@@ -1,0 +1,7 @@
+.next
+node_modules
+admin
+tina/__generated__
+dist
+.DS_Store
+.env

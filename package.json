@@ -1,0 +1,25 @@
+{
+  "name": "dipti-portfolio-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build",
+    "build-local": "tinacms build --local --skip-indexing --skip-cloud-checks && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.3.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tinacms": "^2.7.6"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^1.9.0",
+    "@types/node": "^22.15.21",
+    "@types/react": "^18.3.21",
+    "@types/react-dom": "^18.3.7",
+    "typescript": "^5.8.3"
+  }
+}
