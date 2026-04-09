@@ -25,15 +25,13 @@ export default function HomePage({ page }: HomePageProps) {
   const serviceItems = services.items;
   const processItems = process.items;
   const footerLinks = footer.links;
-  const primaryCta = hero.primaryCta;
-  const secondaryCta = hero.secondaryCta;
 
   return (
-    <main className="page-shell">
-      <div className="container">
-        <div className="site-frame">
+    <main className="min-h-screen bg-[#0f0f0f]">
+      <div className="w-full">
+        <div className="min-h-screen w-full rounded-b-[18px] border border-white/8 px-3 pt-[10px] pb-8 md:px-[18px]">
           <Header brand={page.brand} locationTag={page.locationTag} links={navigation} />
-          <HeroSection {...hero} primaryCta={primaryCta} secondaryCta={secondaryCta} />
+          <HeroSection {...hero} />
           <WorksSection {...works} items={workItems} />
           <ServicesSection {...services} items={serviceItems} />
           <ProcessSection {...process} items={processItems} />

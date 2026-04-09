@@ -17,22 +17,17 @@
     }
   ],
   "hero": {
-    "eyebrow": "Brand and Website Design Studio",
+    "eyebrow": "",
     "title": "Designing websites that bring clarity and drive action, not just look good.",
     "description": "Turning confused visitors into confident customers through clear messaging and intentional design.",
-    "primaryCta": {
-      "label": "Apply to work together",
-      "href": "#contact"
-    },
-    "secondaryCta": {
-      "label": "See selected works",
-      "href": "#works"
-    },
-    "asideLines": [
-      "Serifs & Systems designs websites that bring clarity and drive action.",
-      "By combining strategy with refined visual design, brands position themselves better, stand out, and convert with confidence.",
-      "Built for premium service businesses that want sharper positioning and stronger conversion."
-    ]
+    "formTitle": "Apply to work together",
+    "nameLabel": "Name",
+    "namePlaceholder": "Jane Smith",
+    "emailLabel": "Email",
+    "emailPlaceholder": "jane@framer.com",
+    "locationLabel": "Location",
+    "locationPlaceholder": "Select...",
+    "submitLabel": "Submit"
   },
   "works": {
     "kicker": "Selected Works",
@@ -42,19 +37,27 @@
     "items": [
       {
         "title": "Scuba Diving Website",
-        "description": "From text-heavy and chaotic to clear, visual, and immersive."
+        "description": "From text-heavy and chaotic to clear, visual, and immersive.",
+        "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+        "eyebrow": "Explore the depths of blue"
       },
       {
         "title": "A Dogs Story",
-        "description": "From cluttered and limiting to premium and built to scale."
+        "description": "From cluttered and limiting to premium and built to scale.",
+        "imageUrl": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
+        "eyebrow": "India's 1st Pet Focused Holiday Destination"
       },
       {
         "title": "Adyll",
-        "description": "From forgettable to sharp, minimal, and intentional."
+        "description": "From forgettable to sharp, minimal, and intentional.",
+        "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+        "eyebrow": "A brand driven performance ecosystem"
       },
       {
         "title": "Bluebot Group",
-        "description": "Built to drive action from the first page."
+        "description": "Built to drive action from the first page.",
+        "imageUrl": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1200&q=80",
+        "eyebrow": "Marketing campaigns and tech solutions"
       }
     ]
   },
@@ -65,21 +68,34 @@
     "items": [
       {
         "title": "Brand Identity that commands respect",
-        "description": "Logo, color, typography, and visual language that signal premium positioning."
+        "description": "Logo, color, typography, and visual language that signal premium positioning.",
+        "images": [
+          "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1516321310764-8d15d39e5d0f?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80"
+        ]
       },
       {
         "title": "Website Design that converts",
-        "description": "A digital presence that attracts better clients and reflects your true value."
+        "description": "A digital presence that attracts better clients and reflects your true value.",
+        "images": [
+          "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1000&q=80"
+        ]
       },
       {
         "title": "Brand Strategy that clarifies",
-        "description": "Positioning, messaging, and market clarity that guides all design decisions."
+        "description": "Positioning, messaging, and market clarity that guides all design decisions.",
+        "images": [
+          "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80"
+        ]
       }
     ]
   },
   "process": {
     "kicker": "Our Process",
     "title": "Our Process",
+    "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
     "items": [
       {
         "title": "Discovery",
@@ -106,11 +122,12 @@
     "buttonLabel": "Start a conversation",
     "buttonHref": "mailto:serifsandsystems@gmail.com",
     "caption": "Homepage is fully editable through TinaCMS, section by section.",
-    "formTitle": "Apply to work together",
-    "namePlaceholder": "Name",
-    "emailPlaceholder": "Email",
-    "locationPlaceholder": "Location",
-    "submitLabel": "Submit"
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featuredImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80"
   },
   "footer": {
     "links": [

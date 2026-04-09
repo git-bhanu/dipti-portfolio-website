@@ -12,22 +12,27 @@ type FooterProps = {
 
 export default function Footer({ brand, links, email, instagramHref }: FooterProps) {
   return (
-    <footer className="site-footer">
-      <div className="footer-card">
+    <footer className="pt-[60px]">
+      <div className="flex flex-col items-start justify-between gap-5 pb-1 md:flex-row md:items-end">
         <div>
-          <p className="section-kicker">Get in touch</p>
-          <div className="brand">{brand}</div>
-          <p className="footer-copy">Designing websites that bring clarity and drive action.</p>
+          <p className="mb-4 text-[0.74rem] uppercase tracking-[0.06em] text-[#9a9a97]">Get in touch</p>
+          <div className="text-[0.88rem] font-medium uppercase tracking-[0.01em]">{brand}</div>
+          <p className="mt-2.5 max-w-[320px] text-[0.9rem] leading-[1.45] text-[#9a9a97]">
+            Designing websites that bring clarity and drive action.
+          </p>
         </div>
         <div>
-          <nav className="footer-links" aria-label="Footer navigation">
+          <nav
+            className="flex flex-col items-start gap-3 text-[0.88rem] uppercase tracking-[0.01em] md:flex-row md:items-center md:gap-[18px]"
+            aria-label="Footer navigation"
+          >
             {links.map((link) => (
               <a key={`${link.label}-${link.href}`} href={link.href}>
                 {link.label}
               </a>
             ))}
           </nav>
-          <div className="footer-meta">
+          <div className="mt-[18px] flex flex-col items-start gap-3 text-[0.88rem] uppercase tracking-[0.01em] text-[#9a9a97] md:flex-row md:items-center md:gap-[18px]">
             <a href={`mailto:${email}`}>{email}</a>
             <a href={instagramHref} target="_blank" rel="noreferrer">
               Instagram
