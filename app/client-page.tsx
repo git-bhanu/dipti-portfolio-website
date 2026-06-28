@@ -8,6 +8,7 @@ import WorksSection from '@/components/sections/WorksSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CtaSection from '@/components/sections/CtaSection';
+import { tinaImageUrl } from '@/lib/tina-image';
 
 type ClientPageProps = {
   query: string;
@@ -44,7 +45,11 @@ export default function ClientPage(props: ClientPageProps) {
                 key={i}
                 _block={block}
                 title={block.title}
-                items={(block.items ?? []).map((item: any) => ({ ...item, _raw: item }))}
+                items={(block.items ?? []).map((item: any) => ({
+                  ...item,
+                  _raw: item,
+                  imageUrl: tinaImageUrl(item.imageUrl),
+                }))}
                 kicker=""
                 ctaLabel=""
                 ctaHref=""
@@ -62,7 +67,7 @@ export default function ClientPage(props: ClientPageProps) {
                 items={(block.items ?? []).map((s: any) => ({
                   _raw: s,
                   title: s.title,
-                  imageUrl: s.imageUrl,
+                  imageUrl: tinaImageUrl(s.imageUrl),
                 }))}
               />
             );
@@ -74,7 +79,7 @@ export default function ClientPage(props: ClientPageProps) {
                 _block={block}
                 title={block.title}
                 description={block.description ?? ''}
-                imageUrl={block.imageUrl ?? ''}
+                imageUrl={tinaImageUrl(block.imageUrl)}
                 items={(block.items ?? []).map((item: any) => ({ ...item, _raw: item }))}
                 kicker=""
               />
@@ -89,8 +94,8 @@ export default function ClientPage(props: ClientPageProps) {
                 description={block.description ?? ''}
                 buttonLabel={block.buttonLabel ?? ''}
                 buttonHref={block.buttonHref ?? ''}
-                galleryImages={block.galleryImages ?? []}
-                featuredImage={block.featuredImage ?? ''}
+                galleryImages={(block.galleryImages ?? []).map(tinaImageUrl)}
+                featuredImage={tinaImageUrl(block.featuredImage)}
                 kicker=""
                 caption=""
               />
