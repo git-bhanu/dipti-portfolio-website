@@ -2,57 +2,68 @@
   "brand": "Serifs & Systems",
   "seoTitle": "Serifs and Systems",
   "navigation": [
-    { "label": "Works", "href": "#works" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "Works",
+      "href": "#works"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
   ],
   "footer": {
     "email": "serifsandsystems@gmail.com",
     "instagramHref": "https://www.instagram.com/ludoviclosco/",
     "links": [
-      { "label": "Works", "href": "#works" },
-      { "label": "Contact", "href": "#contact" }
+      {
+        "label": "Works",
+        "href": "#works"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
     ]
   },
   "blocks": [
     {
-      "_template": "hero",
       "title": "Brand strategy and websites with personality.",
       "description": "Helping founders articulate what already makes them different.",
       "ctaLabel": "Start a Project",
-      "ctaHref": "mailto:serifsandsystems@gmail.com"
+      "ctaHref": "mailto:serifsandsystems@gmail.com",
+      "_template": "hero"
     },
     {
-      "_template": "works",
       "title": "Selected Works",
       "items": [
         {
-          "title": "Scuba Diving Website",
+          "title": "Lacadives - Scuba Diving Website",
           "description": "Simplified structure to make content easier to explore and act on.",
-          "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
-          "href": null
+          "href": null,
+          "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80"
         },
         {
           "title": "A Dogs Story",
           "description": "From cluttered and limiting to premium and built to scale.",
-          "imageUrl": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
-          "href": null
+          "href": null,
+          "imageUrl": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80"
         },
         {
           "title": "Adyll",
           "description": "From forgettable to sharp, minimal, and intentional.",
-          "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-          "href": null
+          "href": null,
+          "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
         },
         {
           "title": "Bluebot Group",
           "description": "Built to drive action from the first page.",
-          "imageUrl": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1200&q=80",
-          "href": null
+          "href": null,
+          "imageUrl": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1200&q=80"
         }
-      ]
+      ],
+      "_template": "works"
     },
     {
-      "_template": "services",
       "title": "Services",
       "description": "Each service is designed to strengthen how the market perceives you and positions you as the premium choice.",
       "items": [
@@ -68,10 +79,10 @@
           "title": "Brand Strategy",
           "imageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80"
         }
-      ]
+      ],
+      "_template": "services"
     },
     {
-      "_template": "process",
       "title": "Our Process",
       "description": "Built to influence perception and create preference.",
       "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
@@ -92,10 +103,10 @@
           "title": "Launch & Evolve",
           "description": "Supporting implementation, refinement, and growth as your brand takes shape in the real world."
         }
-      ]
+      ],
+      "_template": "process"
     },
     {
-      "_template": "cta",
       "title": "Ready to invest in perception?",
       "description": "We take limited projects each year.",
       "buttonLabel": "Start a Project",
@@ -105,7 +116,8 @@
         "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=900&q=80",
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
       ],
-      "featuredImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80"
+      "featuredImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
+      "_template": "cta"
     }
   ]
 }
