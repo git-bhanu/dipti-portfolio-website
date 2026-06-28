@@ -1,23 +1,38 @@
-type Service = {
+import { tinaField } from 'tinacms/dist/react';
+
+type ServiceItem = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  _raw?: any;
   title: string;
-  description: string;
-  images: string[];
+  imageUrl: string;
 };
 
 type ServicesSectionProps = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  _block?: any;
   kicker: string;
   title: string;
   description: string;
-  items: Service[];
+  items: ServiceItem[];
 };
 
-export default function ServicesSection({ title, description, items }: ServicesSectionProps) {
+export default function ServicesSection({ _block, title, description, items }: ServicesSectionProps) {
   return (
     <section className="px-[10px] py-[40px] md:px-[80px]" id="services">
       <div className="mx-auto max-w-[1140px]">
         <div className="mb-[32px]">
-          <h2 className="text-h2 font-medium text-brand-white">{title}</h2>
-          <p className="mt-2 text-body text-brand-white">{description}</p>
+          <h2
+            data-tina-field={_block ? tinaField(_block, 'title') : undefined}
+            className="text-h2 font-medium text-brand-white"
+          >
+            {title}
+          </h2>
+          <p
+            data-tina-field={_block ? tinaField(_block, 'description') : undefined}
+            className="mt-2 text-body text-brand-white"
+          >
+            {description}
+          </p>
         </div>
         <div className="flex flex-col gap-[30px] md:flex-row">
           {items.map((item) => (
@@ -25,15 +40,19 @@ export default function ServicesSection({ title, description, items }: ServicesS
               key={item.title}
               className="relative h-[490px] w-full overflow-hidden bg-brand-muted/20 md:w-[360px]"
             >
-              {item.images[0] && (
+              {item.imageUrl && (
                 <img
-                  src={item.images[0]}
+                  data-tina-field={item._raw ? tinaField(item._raw, 'imageUrl') : undefined}
+                  src={item.imageUrl}
                   alt={item.title}
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               )}
               <div className="absolute inset-x-0 top-0 flex items-center justify-between p-[22px]">
-                <h3 className="text-[33px] font-medium leading-none tracking-[-2px] text-brand-white">
+                <h3
+                  data-tina-field={item._raw ? tinaField(item._raw, 'title') : undefined}
+                  className="text-[33px] font-medium leading-none tracking-[-2px] text-brand-white"
+                >
                   {item.title}
                 </h3>
                 <svg

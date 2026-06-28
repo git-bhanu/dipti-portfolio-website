@@ -30,6 +30,7 @@ export default function ClientPage(props: ClientPageProps) {
             return (
               <HeroSection
                 key={i}
+                _block={block}
                 title={block.title}
                 description={block.description}
                 ctaLabel={block.ctaLabel}
@@ -41,8 +42,9 @@ export default function ClientPage(props: ClientPageProps) {
             return (
               <WorksSection
                 key={i}
+                _block={block}
                 title={block.title}
-                items={block.items ?? []}
+                items={(block.items ?? []).map((item: any) => ({ ...item, _raw: item }))}
                 kicker=""
                 ctaLabel=""
                 ctaHref=""
@@ -53,13 +55,14 @@ export default function ClientPage(props: ClientPageProps) {
             return (
               <ServicesSection
                 key={i}
+                _block={block}
                 title={block.title}
                 description={block.description ?? ''}
                 kicker=""
                 items={(block.items ?? []).map((s: any) => ({
+                  _raw: s,
                   title: s.title,
-                  description: '',
-                  images: [s.imageUrl],
+                  imageUrl: s.imageUrl,
                 }))}
               />
             );
@@ -68,8 +71,9 @@ export default function ClientPage(props: ClientPageProps) {
             return (
               <ProcessSection
                 key={i}
+                _block={block}
                 title={block.title}
-                items={block.items ?? []}
+                items={(block.items ?? []).map((item: any) => ({ ...item, _raw: item }))}
                 kicker=""
                 imageUrl=""
               />
@@ -79,6 +83,7 @@ export default function ClientPage(props: ClientPageProps) {
             return (
               <CtaSection
                 key={i}
+                _block={block}
                 title={block.title}
                 description={block.description ?? ''}
                 buttonLabel={block.buttonLabel ?? ''}
