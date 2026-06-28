@@ -48,8 +48,8 @@ function WorkCard({ item }: { item: WorkItem }) {
 
 export default function WorksSection({ _block, title, items }: WorksSectionProps) {
   return (
-    <section className="px-[10px] py-[40px] md:px-[80px]" id="works">
-      <div>
+    <section className="py-[40px]" id="works">
+      <div className="mx-auto w-full max-w-[1920px] px-5 md:px-10">
         <h2
           data-tina-field={_block ? tinaField(_block, 'title') : undefined}
           className="mb-[32px] text-h2 font-medium text-brand-white"

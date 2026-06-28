@@ -18,8 +18,8 @@ type ProcessSectionProps = {
 
 export default function ProcessSection({ _block, title, items }: ProcessSectionProps) {
   return (
-    <section className="px-6 py-[40px] md:px-[80px]" id="process">
-      <div>
+    <section className="py-[40px]" id="process">
+      <div className="mx-auto w-full max-w-[1920px] px-5 md:px-10">
         <h2
           data-tina-field={_block ? tinaField(_block, 'title') : undefined}
           className="mb-[32px] text-h2 font-medium text-brand-white"

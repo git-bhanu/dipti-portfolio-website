@@ -65,8 +65,8 @@ function CtaContent({
 
 export default function CtaSection({ _block, title, description, buttonLabel, buttonHref, galleryImages, featuredImage }: CtaSectionProps) {
   return (
-    <section className="px-6 py-[64px] md:px-[80px]" id="contact">
-      <div>
+    <section className="py-[64px]" id="contact">
+      <div className="mx-auto w-full max-w-[1920px] px-5 md:px-10">
         {/* Mobile: text → photo */}
         <div className="flex flex-col gap-[32px] md:hidden">
           <CtaContent _block={_block} title={title} description={description} buttonLabel={buttonLabel} buttonHref={buttonHref} />
