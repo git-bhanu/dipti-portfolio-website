@@ -1,5 +1,5 @@
 {
-  "brand": "Studio serifs",
+  "brand": "Serifs & Systems",
   "seoTitle": "Serifs and Systems",
   "locationTag": "cdmx",
   "navigation": [
@@ -18,8 +18,8 @@
   ],
   "hero": {
     "eyebrow": "",
-    "title": "Designing websites that bring clarity and drive action, not just look good.",
-    "description": "Turning confused visitors into confident customers through clear messaging and intentional design.",
+    "title": "Brand strategy and websites with personality.",
+    "description": "Helping founders articulate what already makes them different.",
     "formTitle": "Apply to work together",
     "nameLabel": "Name",
     "namePlaceholder": "Jane Smith",
@@ -64,10 +64,10 @@
   "services": {
     "kicker": "Services",
     "title": "Services",
-    "description": "Each service is designed to strengthen how the market perceives you and position you as the premium choice.",
+    "description": "Each service is designed to strengthen how the market perceives you and positions you as the premium choice.",
     "items": [
       {
-        "title": "Brand Identity that commands respect",
+        "title": "Brand Identity",
         "description": "Logo, color, typography, and visual language that signal premium positioning.",
         "images": [
           "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80",
@@ -77,14 +77,14 @@
         ]
       },
       {
-        "title": "Website Design that converts",
+        "title": "Website Design",
         "description": "A digital presence that attracts better clients and reflects your true value.",
         "images": [
           "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1000&q=80"
         ]
       },
       {
-        "title": "Brand Strategy that clarifies",
+        "title": "Brand Strategy",
         "description": "Positioning, messaging, and market clarity that guides all design decisions.",
         "images": [
           "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80"
@@ -98,28 +98,28 @@
     "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
     "items": [
       {
-        "title": "Discovery",
-        "description": "We listen. Your vision, your market, your competition, your constraints."
+        "title": "Discovery & Insights",
+        "description": "Understanding what makes your business distinct starts with listening — to your vision, market, competition, and constraints."
       },
       {
-        "title": "Strategy",
-        "description": "We define positioning, messaging, and the visual direction that supports it."
+        "title": "Shaping the Strategy",
+        "description": "We define positioning, messaging, and visual direction — bringing clarity to what your brand stands for and how it should be expressed."
       },
       {
-        "title": "Design",
-        "description": "We create identity and digital presence that reflects your position with precision."
+        "title": "Refine & Design",
+        "description": "Removing friction, noise, and inconsistency — turning clarity into systems people can experience."
       },
       {
-        "title": "Delivery",
-        "description": "You receive everything needed to launch and maintain your premium brand."
+        "title": "Launch & Evolve",
+        "description": "Supporting implementation, refinement, and growth as your brand takes shape in the real world."
       }
     ]
   },
   "cta": {
     "kicker": "Ready to invest in perception?",
-    "title": "We take limited projects each year.",
-    "description": "If you want a homepage that feels clear, premium, and persuasive, let's talk.",
-    "buttonLabel": "Start a conversation",
+    "title": "Ready to invest in perception?",
+    "description": "We take limited projects each year.",
+    "buttonLabel": "Start a Project",
     "buttonHref": "mailto:serifsandsystems@gmail.com",
     "caption": "Homepage is fully editable through TinaCMS, section by section.",
     "galleryImages": [

@@ -4,41 +4,42 @@ type FooterLink = {
 };
 
 type FooterProps = {
-  brand: string;
+  brand?: string;
   links: FooterLink[];
   email: string;
   instagramHref: string;
 };
 
-export default function Footer({ brand, links, email, instagramHref }: FooterProps) {
+export default function Footer({ email, instagramHref }: FooterProps) {
   return (
-    <footer className="pt-[60px]">
-      <div className="flex flex-col items-start justify-between gap-5 pb-1 md:flex-row md:items-end">
-        <div>
-          <p className="mb-4 text-[0.74rem] uppercase tracking-[0.06em] text-[#9a9a97]">Get in touch</p>
-          <div className="text-[0.88rem] font-medium uppercase tracking-[0.01em]">{brand}</div>
-          <p className="mt-2.5 max-w-[320px] text-[0.9rem] leading-[1.45] text-[#9a9a97]">
-            Designing websites that bring clarity and drive action.
-          </p>
-        </div>
-        <div>
-          <nav
-            className="flex flex-col items-start gap-3 text-[0.88rem] uppercase tracking-[0.01em] md:flex-row md:items-center md:gap-[18px]"
-            aria-label="Footer navigation"
-          >
-            {links.map((link) => (
-              <a key={`${link.label}-${link.href}`} href={link.href}>
-                {link.label}
-              </a>
-            ))}
-          </nav>
-          <div className="mt-[18px] flex flex-col items-start gap-3 text-[0.88rem] uppercase tracking-[0.01em] text-[#9a9a97] md:flex-row md:items-center md:gap-[18px]">
-            <a href={`mailto:${email}`}>{email}</a>
-            <a href={instagramHref} target="_blank" rel="noreferrer">
+    <footer className="border-t border-brand-muted/40 px-4 py-[40px] md:px-[80px]">
+      <div className="mx-auto max-w-[1140px]">
+        <h2 className="text-h2 font-medium text-brand-white">Get in touch</h2>
+
+        {/* Mobile: links row then copyright below */}
+        <div className="mt-6 flex flex-col gap-6 md:hidden">
+          <div className="flex gap-[40px]">
+            <a href={`mailto:${email}`} className="p-2 text-nav font-normal uppercase text-brand-white">
+              Email
+            </a>
+            <a href={instagramHref} target="_blank" rel="noreferrer" className="p-2 text-nav font-normal uppercase text-brand-white">
               Instagram
             </a>
-            <span>© 2026</span>
           </div>
+          <span className="p-2 text-nav font-normal uppercase text-brand-white">©2026</span>
+        </div>
+
+        {/* Desktop: links left, copyright right */}
+        <div className="mt-2 hidden items-start justify-between md:flex">
+          <div className="flex gap-[40px]">
+            <a href={`mailto:${email}`} className="p-2 text-nav font-normal uppercase text-brand-white">
+              Email
+            </a>
+            <a href={instagramHref} target="_blank" rel="noreferrer" className="p-2 text-nav font-normal uppercase text-brand-white">
+              Instagram
+            </a>
+          </div>
+          <span className="p-2 text-nav font-normal uppercase text-brand-white">©2026</span>
         </div>
       </div>
     </footer>

@@ -14,43 +14,40 @@ type WorksSectionProps = {
   items: WorkItem[];
 };
 
-export default function WorksSection({ kicker, title, ctaLabel, ctaHref, items }: WorksSectionProps) {
+function WorkCard({ item }: { item: WorkItem }) {
   return (
-    <section className="pb-[72px]" id="works">
-      <div className="mb-[18px] flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
-        <div>
-          <p className="mb-4 text-[0.74rem] uppercase tracking-[0.06em] text-[#9a9a97]">{kicker}</p>
-          <h2 className="m-0 text-[2.45rem] leading-none font-normal tracking-[-0.05em]">{title}</h2>
-        </div>
-        <a className="text-[0.82rem] uppercase text-[#f4f4f1]" href={ctaHref}>
-          {ctaLabel}
-        </a>
+    <>
+      <div className="h-[513px] overflow-hidden bg-brand-muted/20 md:h-[580px]">
+        <img className="h-full w-full object-cover" src={item.imageUrl} alt={item.title} />
       </div>
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-        {items.map((item) => {
-          const content = (
-            <>
-              <div className="aspect-[0.82] overflow-hidden bg-[#181818]">
-                <img className="h-full w-full object-cover" src={item.imageUrl} alt={item.title} />
-              </div>
-              {item.eyebrow ? (
-                <p className="mt-2.5 mb-1.5 text-[0.72rem] uppercase text-[#9a9a97]">{item.eyebrow}</p>
-              ) : null}
-              <h3 className="m-0 text-[1.15rem] tracking-[-0.03em]">{item.title}</h3>
-              <p className="mt-[3px] text-[0.9rem] leading-[1.45] text-[#9a9a97]">{item.description}</p>
-            </>
-          );
+      <h3 className="mt-2 text-[22px] font-medium leading-none tracking-[-2px] text-brand-white md:text-h3">
+        {item.title}
+      </h3>
+      <p className="mt-1 text-meta text-brand-muted">
+        {item.description}
+      </p>
+    </>
+  );
+}
 
-          return item.href ? (
-            <a key={item.title} className="block" href={item.href}>
-              {content}
-            </a>
-          ) : (
-            <div key={item.title} className="block">
-              {content}
-            </div>
-          );
-        })}
+export default function WorksSection({ title, items }: WorksSectionProps) {
+  return (
+    <section className="px-[10px] py-[40px] md:px-[80px]" id="works">
+      <div className="mx-auto max-w-[1140px]">
+        <h2 className="mb-[32px] text-h2 font-medium text-brand-white">{title}</h2>
+        <div className="flex flex-col gap-[40px] md:flex-row md:flex-wrap">
+          {items.map((item) =>
+            item.href ? (
+              <a key={item.title} href={item.href} className="flex flex-col md:w-[calc(50%-20px)]">
+                <WorkCard item={item} />
+              </a>
+            ) : (
+              <div key={item.title} className="flex flex-col md:w-[calc(50%-20px)]">
+                <WorkCard item={item} />
+              </div>
+            )
+          )}
+        </div>
       </div>
     </section>
   );

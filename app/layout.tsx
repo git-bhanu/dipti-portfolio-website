@@ -1,14 +1,8 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
-const headingFont = Cormorant_Garamond({
-  subsets: ['latin'],
-  variable: '--font-heading',
-  weight: ['400', '500', '600', '700'],
-});
-
-const bodyFont = Inter({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
 });
@@ -16,12 +10,12 @@ const bodyFont = Inter({
 export const metadata: Metadata = {
   title: 'Serifs and Systems',
   description:
-    'Designing websites that bring clarity and drive action, not just look good.',
+    'Brand strategy and websites with personality.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${headingFont.variable} ${bodyFont.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body>{children}</body>
     </html>
   );

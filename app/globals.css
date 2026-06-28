@@ -8,7 +8,7 @@ html {
 
 body {
   min-width: 320px;
-  background: #0f0f0f;
-  color: #f4f4f1;
+  background: theme('colors.brand.black');
+  color: theme('colors.brand.white');
   font-family: var(--font-body), sans-serif;
 }
