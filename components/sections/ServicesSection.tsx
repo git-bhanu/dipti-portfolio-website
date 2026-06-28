@@ -38,7 +38,7 @@ export default function ServicesSection({ _block, title, description, items }: S
           {items.map((item) => (
             <div
               key={item.title}
-              className="relative h-[490px] w-full overflow-hidden bg-brand-muted/20 md:w-[360px]"
+              className="relative h-[490px] w-full overflow-hidden bg-brand-muted/20 md:flex-1"
             >
               {item.imageUrl && (
                 <img

@@ -22,7 +22,7 @@ type WorksSectionProps = {
 function WorkCard({ item }: { item: WorkItem }) {
   return (
     <>
-      <div className="h-[513px] overflow-hidden bg-brand-muted/20 md:h-[580px]">
+      <div className="aspect-[4/5] overflow-hidden bg-brand-muted/20">
         <img
           data-tina-field={item._raw ? tinaField(item._raw, 'imageUrl') : undefined}
           className="h-full w-full object-cover"
