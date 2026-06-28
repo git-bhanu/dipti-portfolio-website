@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { type Components, TinaMarkdown } from 'tinacms/dist/rich-text';
 
 const richComponents: Components<object> = {
@@ -43,7 +44,7 @@ export interface ProjectCardData {
 
 interface ProjectListCardProps {
   project: ProjectCardData;
-  onClick: () => void;
+  href: string;
   sizes?: string;
 }
 
@@ -56,47 +57,46 @@ function extractText(node: unknown): string {
   return '';
 }
 
-export function ProjectListCard({ project, onClick, sizes }: ProjectListCardProps) {
+export function ProjectListCard({ project, href, sizes }: ProjectListCardProps) {
   const thumbSrc = project.cardImage ?? project.image;
 
   return (
-    <article
-      className='group cursor-pointer overflow-hidden'
-      onClick={onClick}
-    >
-      <div className='relative aspect-[4/3] w-full overflow-hidden bg-brand-offwhite'>
-        {thumbSrc ? (
-          <Image
-            src={thumbSrc}
-            alt={project.cardImageAlt ?? project.imageAlt ?? extractText(project.title)}
-            fill
-            sizes={sizes ?? '(max-width: 767px) 100vw, 33vw'}
-            className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
-          />
-        ) : (
-          <div className='absolute inset-0 bg-brand-offwhite' />
-        )}
-      </div>
+    <Link href={href} className='group block'>
+      <article>
+        <div className='relative aspect-[4/3] w-full overflow-hidden bg-brand-offwhite'>
+          {thumbSrc ? (
+            <Image
+              src={thumbSrc}
+              alt={project.cardImageAlt ?? project.imageAlt ?? extractText(project.title)}
+              fill
+              sizes={sizes ?? '(max-width: 767px) 100vw, 33vw'}
+              className='object-cover transition-transform duration-500 group-hover:scale-[1.03]'
+            />
+          ) : (
+            <div className='absolute inset-0 bg-brand-offwhite' />
+          )}
+        </div>
 
-      <div className='pt-4 pb-2'>
-        {(project.date || project.category) && (
-          <p className='text-meta font-normal text-brand-muted mb-2'>
-            {project.date && <span>{formatDate(project.date)}</span>}
-            {project.date && project.category && ' · '}
-            {project.category && <span className='font-medium text-brand-black'>{project.category}</span>}
-          </p>
-        )}
+        <div className='pt-4 pb-2'>
+          {(project.date || project.category) && (
+            <p className='text-meta font-normal text-brand-muted mb-2'>
+              {project.date && <span>{formatDate(project.date)}</span>}
+              {project.date && project.category && ' · '}
+              {project.category && <span className='font-medium text-brand-black'>{project.category}</span>}
+            </p>
+          )}
 
-        <h3 className='text-h3 font-medium leading-none tracking-tight text-brand-black'>
-          <TinaMarkdown content={project.title} components={richComponents} />
-        </h3>
+          <h3 className='text-h3 font-medium leading-none tracking-tight text-brand-black'>
+            <TinaMarkdown content={project.title} components={richComponents} />
+          </h3>
 
-        {project.description && (
-          <div className='mt-2 text-meta text-brand-muted line-clamp-2'>
-            <TinaMarkdown content={project.description} components={richComponents} />
-          </div>
-        )}
-      </div>
-    </article>
+          {project.description && (
+            <div className='mt-2 text-meta text-brand-muted line-clamp-2'>
+              <TinaMarkdown content={project.description} components={richComponents} />
+            </div>
+          )}
+        </div>
+      </article>
+    </Link>
   );
 }

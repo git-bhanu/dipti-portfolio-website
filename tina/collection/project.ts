@@ -11,7 +11,10 @@ export const ProjectCollection: Collection = {
   path: 'content/project',
   format: 'json',
   ui: {
-    router: ({ document }) => `/projects?project=${document._sys.filename}`,
+    router: ({ document }) => {
+      const slug = document._sys.filename.toLowerCase();
+      return `/projects/${slug}`;
+    },
   },
   fields: [
     {

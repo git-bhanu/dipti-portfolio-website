@@ -11,14 +11,13 @@ export interface ProjectListItem {
 
 interface ProjectListGridProps {
   items: ProjectListItem[];
-  onItemClick: (slug: string) => void;
 }
 
 function itemSlug(item: ProjectListItem) {
   return (item.slug ?? item._sys.filename).toLowerCase();
 }
 
-export function ProjectListGrid({ items, onItemClick }: ProjectListGridProps) {
+export function ProjectListGrid({ items }: ProjectListGridProps) {
   if (items.length === 0) return null;
 
   return (
@@ -27,7 +26,7 @@ export function ProjectListGrid({ items, onItemClick }: ProjectListGridProps) {
         <ProjectListCard
           key={item.id}
           project={item.data}
-          onClick={() => onItemClick(itemSlug(item))}
+          href={`/projects/${itemSlug(item)}`}
           sizes='(max-width: 767px) 100vw, 33vw'
         />
       ))}
