@@ -13,7 +13,7 @@ type FooterProps = {
 export default function Footer({ email, instagramHref }: FooterProps) {
   return (
     <footer className="border-t border-brand-muted/40 px-4 py-[40px] md:px-[80px]">
-      <div className="mx-auto max-w-[1140px]">
+      <div>
         <h2 className="text-h2 font-medium text-brand-white">Get in touch</h2>
 
         {/* Mobile: links row then copyright below */}

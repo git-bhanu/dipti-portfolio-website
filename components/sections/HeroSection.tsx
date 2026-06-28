@@ -21,7 +21,7 @@ export default function HeroSection({
       <div className="flex flex-col items-center gap-6 md:gap-[32px]">
         <h1
           data-tina-field={_block ? tinaField(_block, 'title') : undefined}
-          className="w-[300px] text-center text-[32px] font-medium leading-tight tracking-[-2.24px] text-brand-white md:w-[980px] md:text-h1"
+          className="max-w-[300px] text-center text-[32px] font-medium leading-tight tracking-[-2.24px] text-brand-white md:max-w-[980px] md:text-h1"
         >
           {title}
         </h1>

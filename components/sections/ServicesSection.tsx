@@ -19,7 +19,7 @@ type ServicesSectionProps = {
 export default function ServicesSection({ _block, title, description, items }: ServicesSectionProps) {
   return (
     <section className="px-[10px] py-[40px] md:px-[80px]" id="services">
-      <div className="mx-auto max-w-[1140px]">
+      <div>
         <div className="mb-[32px]">
           <h2
             data-tina-field={_block ? tinaField(_block, 'title') : undefined}
