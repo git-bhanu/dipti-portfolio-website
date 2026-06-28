@@ -1,146 +1,109 @@
 {
   "brand": "Serifs & Systems",
   "seoTitle": "Serifs and Systems",
-  "locationTag": "cdmx",
   "navigation": [
-    {
-      "label": "Home",
-      "href": "#top"
-    },
-    {
-      "label": "Works",
-      "href": "#works"
-    },
-    {
-      "label": "Contact",
-      "href": "#contact"
-    }
+    { "label": "Works", "href": "#works" },
+    { "label": "Contact", "href": "#contact" }
   ],
-  "hero": {
-    "eyebrow": "",
-    "title": "Brand strategy and websites with personality.",
-    "description": "Helping founders articulate what already makes them different.",
-    "formTitle": "Apply to work together",
-    "nameLabel": "Name",
-    "namePlaceholder": "Jane Smith",
-    "emailLabel": "Email",
-    "emailPlaceholder": "jane@framer.com",
-    "locationLabel": "Location",
-    "locationPlaceholder": "Select...",
-    "submitLabel": "Submit"
-  },
-  "works": {
-    "kicker": "Selected Works",
-    "title": "Selected Works",
-    "ctaLabel": "See all works",
-    "ctaHref": "#works",
-    "items": [
-      {
-        "title": "Scuba Diving Website",
-        "description": "From text-heavy and chaotic to clear, visual, and immersive.",
-        "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
-        "eyebrow": "Explore the depths of blue"
-      },
-      {
-        "title": "A Dogs Story",
-        "description": "From cluttered and limiting to premium and built to scale.",
-        "imageUrl": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
-        "eyebrow": "India's 1st Pet Focused Holiday Destination"
-      },
-      {
-        "title": "Adyll",
-        "description": "From forgettable to sharp, minimal, and intentional.",
-        "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-        "eyebrow": "A brand driven performance ecosystem"
-      },
-      {
-        "title": "Bluebot Group",
-        "description": "Built to drive action from the first page.",
-        "imageUrl": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1200&q=80",
-        "eyebrow": "Marketing campaigns and tech solutions"
-      }
-    ]
-  },
-  "services": {
-    "kicker": "Services",
-    "title": "Services",
-    "description": "Each service is designed to strengthen how the market perceives you and positions you as the premium choice.",
-    "items": [
-      {
-        "title": "Brand Identity",
-        "description": "Logo, color, typography, and visual language that signal premium positioning.",
-        "images": [
-          "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80",
-          "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
-          "https://images.unsplash.com/photo-1516321310764-8d15d39e5d0f?auto=format&fit=crop&w=800&q=80",
-          "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80"
-        ]
-      },
-      {
-        "title": "Website Design",
-        "description": "A digital presence that attracts better clients and reflects your true value.",
-        "images": [
-          "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1000&q=80"
-        ]
-      },
-      {
-        "title": "Brand Strategy",
-        "description": "Positioning, messaging, and market clarity that guides all design decisions.",
-        "images": [
-          "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80"
-        ]
-      }
-    ]
-  },
-  "process": {
-    "kicker": "Our Process",
-    "title": "Our Process",
-    "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80",
-    "items": [
-      {
-        "title": "Discovery & Insights",
-        "description": "Understanding what makes your business distinct starts with listening — to your vision, market, competition, and constraints."
-      },
-      {
-        "title": "Shaping the Strategy",
-        "description": "We define positioning, messaging, and visual direction — bringing clarity to what your brand stands for and how it should be expressed."
-      },
-      {
-        "title": "Refine & Design",
-        "description": "Removing friction, noise, and inconsistency — turning clarity into systems people can experience."
-      },
-      {
-        "title": "Launch & Evolve",
-        "description": "Supporting implementation, refinement, and growth as your brand takes shape in the real world."
-      }
-    ]
-  },
-  "cta": {
-    "kicker": "Ready to invest in perception?",
-    "title": "Ready to invest in perception?",
-    "description": "We take limited projects each year.",
-    "buttonLabel": "Start a Project",
-    "buttonHref": "mailto:serifsandsystems@gmail.com",
-    "caption": "Homepage is fully editable through TinaCMS, section by section.",
-    "galleryImages": [
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
-    ],
-    "featuredImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80"
-  },
   "footer": {
-    "links": [
-      {
-        "label": "Works",
-        "href": "#works"
-      },
-      {
-        "label": "Contact",
-        "href": "#contact"
-      }
-    ],
     "email": "serifsandsystems@gmail.com",
-    "instagramHref": "https://www.instagram.com/ludoviclosco/"
-  }
+    "instagramHref": "https://www.instagram.com/ludoviclosco/",
+    "links": [
+      { "label": "Works", "href": "#works" },
+      { "label": "Contact", "href": "#contact" }
+    ]
+  },
+  "blocks": [
+    {
+      "_template": "hero",
+      "title": "Brand strategy and websites with personality.",
+      "description": "Helping founders articulate what already makes them different.",
+      "ctaLabel": "Start a Project",
+      "ctaHref": "mailto:serifsandsystems@gmail.com"
+    },
+    {
+      "_template": "works",
+      "title": "Selected Works",
+      "items": [
+        {
+          "title": "Scuba Diving Website",
+          "description": "Simplified structure to make content easier to explore and act on.",
+          "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+          "href": null
+        },
+        {
+          "title": "A Dogs Story",
+          "description": "From cluttered and limiting to premium and built to scale.",
+          "imageUrl": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
+          "href": null
+        },
+        {
+          "title": "Adyll",
+          "description": "From forgettable to sharp, minimal, and intentional.",
+          "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+          "href": null
+        },
+        {
+          "title": "Bluebot Group",
+          "description": "Built to drive action from the first page.",
+          "imageUrl": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1200&q=80",
+          "href": null
+        }
+      ]
+    },
+    {
+      "_template": "services",
+      "title": "Services",
+      "description": "Each service is designed to strengthen how the market perceives you and positions you as the premium choice.",
+      "items": [
+        {
+          "title": "Brand Identity",
+          "imageUrl": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          "title": "Website Design",
+          "imageUrl": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1000&q=80"
+        },
+        {
+          "title": "Brand Strategy",
+          "imageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80"
+        }
+      ]
+    },
+    {
+      "_template": "process",
+      "title": "Our Process",
+      "items": [
+        {
+          "title": "Discovery & Insights",
+          "description": "Understanding what makes your business distinct starts with listening — to your vision, market, competition, and constraints."
+        },
+        {
+          "title": "Shaping the Strategy",
+          "description": "We define positioning, messaging, and visual direction — bringing clarity to what your brand stands for and how it should be expressed."
+        },
+        {
+          "title": "Refine & Design",
+          "description": "Removing friction, noise, and inconsistency — turning clarity into systems people can experience."
+        },
+        {
+          "title": "Launch & Evolve",
+          "description": "Supporting implementation, refinement, and growth as your brand takes shape in the real world."
+        }
+      ]
+    },
+    {
+      "_template": "cta",
+      "title": "Ready to invest in perception?",
+      "description": "We take limited projects each year.",
+      "buttonLabel": "Start a Project",
+      "buttonHref": "mailto:serifsandsystems@gmail.com",
+      "galleryImages": [
+        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=900&q=80",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
+      ],
+      "featuredImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80"
+    }
+  ]
 }

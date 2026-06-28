@@ -1,6 +1,17 @@
-import homeContent from '@/content/page/home.json';
-import HomePage from '@/tina/pages/HomePage';
+import client from '@/tina/__generated__/client';
+import ClientPage from './client-page';
 
 export default async function Page() {
-  return <HomePage page={homeContent} />;
+  const result = await client.queries.sitePage(
+    { relativePath: 'home.json' },
+    { fetchOptions: { next: { revalidate: 60 } } }
+  );
+
+  return (
+    <ClientPage
+      query={result.query}
+      data={result.data}
+      variables={result.variables}
+    />
+  );
 }
