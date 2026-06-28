@@ -29,7 +29,7 @@ export default function ServicesSection({ _block, title, description, items }: S
           </h2>
           <p
             data-tina-field={_block ? tinaField(_block, 'description') : undefined}
-            className="mt-2 text-body text-brand-white"
+            className="mt-2 text-meta text-brand-muted"
           >
             {description}
           </p>

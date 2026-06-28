@@ -48,7 +48,7 @@ function CtaContent({
       </h2>
       <p
         data-tina-field={_block ? tinaField(_block, 'description') : undefined}
-        className="mt-[10px] mb-[32px] text-body text-brand-muted"
+        className="mt-[10px] mb-[32px] text-meta text-brand-muted"
       >
         {description}
       </p>
@@ -70,12 +70,12 @@ export default function CtaSection({ _block, title, description, buttonLabel, bu
         {/* Mobile: text → photo */}
         <div className="flex flex-col gap-[32px] md:hidden">
           <CtaContent _block={_block} title={title} description={description} buttonLabel={buttonLabel} buttonHref={buttonHref} />
-          <PhotoMosaic galleryImages={galleryImages} featuredImage={featuredImage} className="h-[344px] w-full" />
+          <PhotoMosaic galleryImages={galleryImages} featuredImage={featuredImage} className="h-[360px] w-full" />
         </div>
 
         {/* Desktop: photo → text */}
-        <div className="hidden items-center gap-[32px] md:flex">
-          <PhotoMosaic galleryImages={galleryImages} featuredImage={featuredImage} className="h-[447px] w-[440px]" />
+        <div className="hidden items-center gap-[48px] md:flex">
+          <PhotoMosaic galleryImages={galleryImages} featuredImage={featuredImage} className="min-h-[480px] w-[55%] shrink-0" />
           <CtaContent _block={_block} title={title} description={description} buttonLabel={buttonLabel} buttonHref={buttonHref} />
         </div>
       </div>

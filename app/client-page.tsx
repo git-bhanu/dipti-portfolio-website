@@ -73,9 +73,10 @@ export default function ClientPage(props: ClientPageProps) {
                 key={i}
                 _block={block}
                 title={block.title}
+                description={block.description ?? ''}
+                imageUrl={block.imageUrl ?? ''}
                 items={(block.items ?? []).map((item: any) => ({ ...item, _raw: item }))}
                 kicker=""
-                imageUrl=""
               />
             );
 

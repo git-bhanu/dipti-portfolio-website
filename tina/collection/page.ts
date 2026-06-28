@@ -83,6 +83,13 @@ const processBlock: Template = {
   fields: [
     { name: 'title', label: 'Section Title', type: 'string', required: true },
     {
+      name: 'description',
+      label: 'Subtitle',
+      type: 'string',
+      ui: { component: 'textarea' },
+    },
+    { name: 'imageUrl', label: 'Side Image', type: 'image' },
+    {
       name: 'items',
       label: 'Process Steps',
       type: 'object',
