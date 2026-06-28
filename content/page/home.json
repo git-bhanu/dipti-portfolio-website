@@ -2,27 +2,17 @@
   "brand": "Serifs & Systems",
   "seoTitle": "Serifs and Systems",
   "navigation": [
-    {
-      "label": "Works",
-      "href": "#works"
-    },
-    {
-      "label": "Contact",
-      "href": "#contact"
-    }
+    { "label": "Works", "href": "#works" },
+    { "label": "Projects", "href": "/projects" },
+    { "label": "Contact", "href": "#contact" }
   ],
   "footer": {
     "email": "serifsandsystems@gmail.com",
     "instagramHref": "https://www.instagram.com/ludoviclosco/",
     "links": [
-      {
-        "label": "Works",
-        "href": "#works"
-      },
-      {
-        "label": "Contact",
-        "href": "#contact"
-      }
+      { "label": "Works", "href": "#works" },
+      { "label": "Projects", "href": "/projects" },
+      { "label": "Contact", "href": "#contact" }
     ]
   },
   "blocks": [

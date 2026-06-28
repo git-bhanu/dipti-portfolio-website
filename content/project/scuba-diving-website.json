@@ -1,0 +1,64 @@
+{
+  "title": {
+    "type": "root",
+    "children": [
+      {
+        "type": "p",
+        "children": [{ "type": "text", "text": "Scuba Diving Website" }]
+      }
+    ]
+  },
+  "sortOrder": 1,
+  "slug": "scuba-diving-website",
+  "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80",
+  "imageAlt": "Scuba diver underwater",
+  "cardImage": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+  "cardImageAlt": "Scuba diver underwater",
+  "date": "2024-03-01T00:00:00.000Z",
+  "category": "Web Design",
+  "description": {
+    "type": "root",
+    "children": [
+      {
+        "type": "p",
+        "children": [{ "type": "text", "text": "Simplified structure to make content easier to explore and act on." }]
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "_template": "header",
+      "level": "h2",
+      "heading": {
+        "type": "root",
+        "children": [
+          {
+            "type": "p",
+            "children": [{ "type": "text", "text": "The Challenge" }]
+          }
+        ]
+      }
+    },
+    {
+      "_template": "twoColumnText",
+      "leftColumn": {
+        "type": "root",
+        "children": [
+          {
+            "type": "p",
+            "children": [{ "type": "text", "text": "The existing site was cluttered, hard to navigate, and failing to convert visitors into bookings." }]
+          }
+        ]
+      },
+      "rightColumn": {
+        "type": "root",
+        "children": [
+          {
+            "type": "p",
+            "children": [{ "type": "text", "text": "We restructured the information architecture and redesigned the booking flow to remove friction at every step." }]
+          }
+        ]
+      }
+    }
+  ]
+}

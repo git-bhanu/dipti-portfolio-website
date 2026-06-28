@@ -1,0 +1,47 @@
+import type { Template } from 'tinacms';
+
+export const imageBlock: Template = {
+  name: 'image',
+  label: 'Image',
+  ui: {
+    itemProps: (item) => {
+      const count = Array.isArray(item?.images) ? item.images.length : 0;
+      return { label: `Image — ${count} ${count === 1 ? 'image' : 'images'}` };
+    },
+  },
+  fields: [
+    {
+      type: 'string',
+      name: 'width',
+      label: 'Width',
+      options: [
+        { label: 'Narrow', value: 'narrow' },
+        { label: 'Wide', value: 'wide' },
+        { label: 'Full', value: 'full' },
+      ],
+    },
+    {
+      type: 'string',
+      name: 'orientation',
+      label: 'Orientation',
+      options: [
+        { label: 'Landscape (16:9)', value: 'landscape' },
+        { label: 'Portrait (9:16)', value: 'portrait' },
+      ],
+      ui: { defaultValue: 'landscape' },
+    },
+    {
+      type: 'object',
+      name: 'images',
+      label: 'Images',
+      list: true,
+      ui: {
+        itemProps: (item) => ({ label: item?.alt ?? 'Image' }),
+      },
+      fields: [
+        { type: 'image', name: 'src', label: 'Image' },
+        { type: 'string', name: 'alt', label: 'Alt Text' },
+      ],
+    },
+  ],
+};

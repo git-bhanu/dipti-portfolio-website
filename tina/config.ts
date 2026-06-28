@@ -1,5 +1,6 @@
 import { defineConfig } from 'tinacms';
 import { PageCollection } from './collection/page';
+import { ProjectCollection } from './collection/project';
 
 const branch =
   process.env.NEXT_PUBLIC_TINA_BRANCH ||
@@ -22,6 +23,6 @@ export default defineConfig({
     },
   },
   schema: {
-    collections: [PageCollection],
+    collections: [PageCollection, ProjectCollection],
   },
 });
