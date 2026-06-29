@@ -85,7 +85,7 @@
     {
       "title": "Our Process",
       "description": "Built to influence perception and create preference.",
-      "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+      "imageUrl": "/Our process.png",
       "items": [
         {
           "title": "Discovery & Insights",
@@ -116,7 +116,7 @@
         "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=900&q=80",
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80"
       ],
-      "featuredImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
+      "featuredImage": "/Adyll.png",
       "_template": "cta"
     }
   ]
