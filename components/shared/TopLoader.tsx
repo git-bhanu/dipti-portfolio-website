@@ -51,7 +51,7 @@ export default function TopLoader() {
     <div
       ref={barRef}
       className="fixed top-0 left-0 right-0 z-[9999] h-[2px] bg-brand-white origin-left"
-      style={{ opacity: 0, scaleX: 0, transformOrigin: 'left' }}
+      style={{ opacity: 0, transform: 'scaleX(0)', transformOrigin: 'left' }}
     />
   );
 }
