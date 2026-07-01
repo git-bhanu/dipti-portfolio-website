@@ -14,18 +14,27 @@ type CtaSectionProps = {
 };
 
 function PhotoMosaic({ galleryImages, featuredImage, className }: { galleryImages: string[]; featuredImage: string; className?: string }) {
-  const [img1, img2] = galleryImages;
+  const [img1, img2, img3] = galleryImages;
 
   return (
-    <div className={`grid shrink-0 grid-cols-2 gap-[6px] ${className ?? ''}`}>
-      <div className="row-span-2 overflow-hidden bg-brand-muted/20">
-        {img1 && <img src={img1} alt="" className="h-full w-full object-cover" />}
+    <div className={`flex shrink-0 gap-[6px] ${className ?? ''}`}>
+      {/* Left col: tall top, short bottom */}
+      <div className="flex flex-1 flex-col gap-[6px]">
+        <div className="flex-[3] overflow-hidden bg-brand-muted/20">
+          {img1 && <img src={img1} alt="" className="h-full w-full object-cover" />}
+        </div>
+        <div className="flex-[2] overflow-hidden bg-brand-muted/20">
+          {img3 && <img src={img3} alt="" className="h-full w-full object-cover" />}
+        </div>
       </div>
-      <div className="overflow-hidden bg-brand-muted/20">
-        {img2 && <img src={img2} alt="" className="h-full w-full object-cover" />}
-      </div>
-      <div className="overflow-hidden bg-brand-muted/20">
-        {featuredImage && <img src={featuredImage} alt="" className="h-full w-full object-cover" />}
+      {/* Right col: short top, tall bottom */}
+      <div className="flex flex-1 flex-col gap-[6px]">
+        <div className="flex-[2] overflow-hidden bg-brand-muted/20">
+          {img2 && <img src={img2} alt="" className="h-full w-full object-cover" />}
+        </div>
+        <div className="flex-[3] overflow-hidden bg-brand-muted/20">
+          {featuredImage && <img src={featuredImage} alt="" className="h-full w-full object-cover" />}
+        </div>
       </div>
     </div>
   );

@@ -19,12 +19,12 @@ type ProcessSectionProps = {
 
 export default function ProcessSection({ _block, title, description, imageUrl, items }: ProcessSectionProps) {
   return (
-    <section className="py-[60px]" id="process">
+    <section className="py-[80px]" id="process">
       <div className="mx-auto w-full max-w-[1920px] px-5 md:px-10">
-        <div className="flex flex-col gap-[48px] md:flex-row md:gap-[80px]">
+        <div className="flex flex-col gap-[60px] md:flex-row md:items-start md:gap-[80px]">
 
           {/* Left: heading + steps */}
-          <div className="flex flex-col gap-[40px] md:w-[60%]">
+          <div className="flex flex-col gap-[40px] md:w-[55%]">
             <div>
               <h2
                 data-tina-field={_block ? tinaField(_block, 'title') : undefined}
@@ -42,18 +42,18 @@ export default function ProcessSection({ _block, title, description, imageUrl, i
               )}
             </div>
 
-            <div className="flex flex-col gap-[28px]">
+            <div className="flex flex-col gap-[48px]">
               {items.map((item) => (
                 <div key={item.title} className="flex flex-row gap-[40px]">
                   <p
                     data-tina-field={item._raw ? tinaField(item._raw, 'title') : undefined}
-                    className="w-[180px] shrink-0 text-meta font-bold text-brand-white"
+                    className="w-[160px] shrink-0 text-meta font-bold text-brand-white"
                   >
                     {item.title}
                   </p>
                   <p
                     data-tina-field={item._raw ? tinaField(item._raw, 'description') : undefined}
-                    className="text-meta text-brand-muted"
+                    className="max-w-[280px] text-meta text-brand-muted"
                   >
                     {item.description}
                   </p>
@@ -66,7 +66,7 @@ export default function ProcessSection({ _block, title, description, imageUrl, i
           {imageUrl && (
             <div
               data-tina-field={_block ? tinaField(_block, 'imageUrl') : undefined}
-              className="min-h-[50vh] overflow-hidden md:w-[40%]"
+              className="overflow-hidden md:w-[45%] aspect-[460/412]"
             >
               <img
                 src={imageUrl}

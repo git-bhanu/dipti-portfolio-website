@@ -68,6 +68,7 @@ export default function ClientPage(props: ClientPageProps) {
                   _raw: s,
                   title: s.title,
                   imageUrl: tinaImageUrl(s.imageUrl),
+                  description: s.description,
                 }))}
               />
             );

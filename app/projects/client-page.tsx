@@ -1,6 +1,7 @@
 'use client';
 
 import { ProjectListGrid } from '@/components/projects/project-list-grid';
+import type { ProjectCardData } from '@/components/projects/project-list-card';
 import Footer from '@/components/shared/Footer';
 import Header from '@/components/shared/Header';
 import { tinaImageUrl } from '@/lib/tina-image';
@@ -54,7 +55,7 @@ export default function ProjectsClientPage({ query, data, variables, sitePage }:
                 ...p,
                 image: tinaImageUrl(p.image),
                 cardImage: tinaImageUrl(p.cardImage),
-              },
+              } as ProjectCardData,
             }))}
           />
         </div>

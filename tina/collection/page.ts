@@ -72,6 +72,12 @@ const servicesBlock: Template = {
       fields: [
         { name: 'title', label: 'Title', type: 'string', required: true },
         { name: 'imageUrl', label: 'Background Image', type: 'image', required: true },
+        {
+          name: 'description',
+          label: 'Hover Description',
+          type: 'string',
+          ui: { component: 'textarea' },
+        },
       ],
     },
   ],
