@@ -1,4 +1,4 @@
-import { tinaField } from 'tinacms/dist/react';
+import { tinaField } from "tinacms/dist/react";
 
 type WorkItem = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,21 +24,25 @@ function WorkCard({ item }: { item: WorkItem }) {
     <>
       <div className="aspect-[4/5] overflow-hidden bg-brand-muted/20">
         <img
-          data-tina-field={item._raw ? tinaField(item._raw, 'imageUrl') : undefined}
+          data-tina-field={
+            item._raw ? tinaField(item._raw, "imageUrl") : undefined
+          }
           className="h-full w-full object-cover"
           src={item.imageUrl}
           alt={item.title}
         />
       </div>
       <h3
-        data-tina-field={item._raw ? tinaField(item._raw, 'title') : undefined}
-        className="mt-2 text-[22px] font-medium leading-none tracking-[-2px] text-brand-white md:text-h3"
+        data-tina-field={item._raw ? tinaField(item._raw, "title") : undefined}
+        className="mt-2 text-[22px] font-medium leading-none tracking-[-2px] text-brand-white md:text-[32px]"
       >
         {item.title}
       </h3>
       <p
-        data-tina-field={item._raw ? tinaField(item._raw, 'description') : undefined}
-        className="mt-1 text-meta text-brand-muted"
+        data-tina-field={
+          item._raw ? tinaField(item._raw, "description") : undefined
+        }
+        className="mt-1 text-meta text-brand-muted md:text-[16px] font-normal"
       >
         {item.description}
       </p>
@@ -46,24 +50,35 @@ function WorkCard({ item }: { item: WorkItem }) {
   );
 }
 
-export default function WorksSection({ _block, title, items }: WorksSectionProps) {
+export default function WorksSection({
+  _block,
+  title,
+  items,
+}: WorksSectionProps) {
   return (
     <section className="py-[40px]" id="works">
       <div className="mx-auto w-full max-w-[1920px] px-5 md:px-10">
         <h2
-          data-tina-field={_block ? tinaField(_block, 'title') : undefined}
-          className="mb-[32px] text-h2 font-medium text-brand-white"
+          data-tina-field={_block ? tinaField(_block, "title") : undefined}
+          className="mb-[32px] text-[48px] font-medium text-brand-white"
         >
           {title}
         </h2>
         <div className="flex flex-col gap-[40px] md:flex-row md:flex-wrap">
           {items.map((item) =>
             item.href ? (
-              <a key={item.title} href={item.href} className="flex flex-col md:w-[calc(50%-20px)]">
+              <a
+                key={item.title}
+                href={item.href}
+                className="flex flex-col md:w-[calc(50%-20px)]"
+              >
                 <WorkCard item={item} />
               </a>
             ) : (
-              <div key={item.title} className="flex flex-col md:w-[calc(50%-20px)]">
+              <div
+                key={item.title}
+                className="flex flex-col md:w-[calc(50%-20px)]"
+              >
                 <WorkCard item={item} />
               </div>
             )
