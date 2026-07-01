@@ -2,17 +2,27 @@
   "brand": "Serifs & Systems",
   "seoTitle": "Serifs and Systems",
   "navigation": [
-    { "label": "Works", "href": "#works" },
-    { "label": "Projects", "href": "/projects" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "Works",
+      "href": "/#works"
+    },
+    {
+      "label": "Contact",
+      "href": "/#contact"
+    }
   ],
   "footer": {
     "email": "serifsandsystems@gmail.com",
     "instagramHref": "https://www.instagram.com/ludoviclosco/",
     "links": [
-      { "label": "Works", "href": "#works" },
-      { "label": "Projects", "href": "/projects" },
-      { "label": "Contact", "href": "#contact" }
+      {
+        "label": "Works",
+        "href": "/#works"
+      },
+      {
+        "label": "Contact",
+        "href": "/#contact"
+      }
     ]
   },
   "blocks": [
@@ -25,30 +35,19 @@
     },
     {
       "title": "Selected Works",
+      "subtitle": "A curated look at recent brand and web projects.",
       "items": [
         {
-          "title": "Scuba Diving Website",
-          "description": "Simplified structure to make content easier to explore and act on.",
-          "href": null,
-          "imageUrl": "/Scuba-dives-2.jpg"
+          "project": "content/project/scuba-diving-website.json"
         },
         {
-          "title": "A Dogs Story",
-          "description": "From cluttered and limiting to premium and built to scale.",
-          "href": null,
-          "imageUrl": "/Dog's-Story-wall3.jpg"
+          "project": "content/project/a-dogs-story.json"
         },
         {
-          "title": "Adyll",
-          "description": "From forgettable to sharp, minimal, and intentional.",
-          "href": null,
-          "imageUrl": "/Adyll_Home.jpg"
+          "project": "content/project/adyll.json"
         },
         {
-          "title": "Bluebot Group",
-          "description": "Built to drive action from the first page.",
-          "href": null,
-          "imageUrl": "/bluebot_display.jpg"
+          "project": "content/project/bluebot-group.json"
         }
       ],
       "_template": "works"

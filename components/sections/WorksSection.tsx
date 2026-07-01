@@ -1,12 +1,11 @@
 import { tinaField } from "tinacms/dist/react";
 
 type WorkItem = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  _raw?: any;
   title: string;
-  description: string;
-  href?: string | null;
-  imageUrl: string;
+  slug: string;
+  image: string;
+  imageAlt: string;
+  subtitle: string;
 };
 
 type WorksSectionProps = {
@@ -14,45 +13,26 @@ type WorksSectionProps = {
   _block?: any;
   kicker: string;
   title: string;
+  subtitle?: string;
   ctaLabel: string;
   ctaHref: string;
   items: WorkItem[];
 };
 
-function WorkCard({ item }: { item: WorkItem }) {
-  return (
-    <>
-      <div className="aspect-[4/5] overflow-hidden bg-brand-muted/20">
-        <img
-          data-tina-field={
-            item._raw ? tinaField(item._raw, "imageUrl") : undefined
-          }
-          className="h-full w-full object-cover"
-          src={item.imageUrl}
-          alt={item.title}
-        />
-      </div>
-      <h3
-        data-tina-field={item._raw ? tinaField(item._raw, "title") : undefined}
-        className="mt-2 text-[22px] font-medium leading-none tracking-[-2px] text-brand-white md:text-[32px]"
-      >
-        {item.title}
-      </h3>
-      <p
-        data-tina-field={
-          item._raw ? tinaField(item._raw, "description") : undefined
-        }
-        className="mt-1 text-meta text-brand-muted md:text-[16px] font-normal"
-      >
-        {item.description}
-      </p>
-    </>
-  );
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function extractText(content: any): string {
+  if (!content) return "";
+  if (typeof content === "string") return content.replace(/\n$/, "");
+  if (Array.isArray(content)) return content.map(extractText).join("");
+  if (content.text) return content.text;
+  if (content.children) return extractText(content.children);
+  return "";
 }
 
 export default function WorksSection({
   _block,
   title,
+  subtitle,
   items,
 }: WorksSectionProps) {
   return (
@@ -60,29 +40,36 @@ export default function WorksSection({
       <div className="mx-auto w-full max-w-[1920px] px-5 md:px-10">
         <h2
           data-tina-field={_block ? tinaField(_block, "title") : undefined}
-          className="mb-[32px] text-[48px] font-medium text-brand-white"
+          className="text-[48px] font-medium text-brand-white"
         >
           {title}
         </h2>
-        <div className="flex flex-col gap-[40px] md:flex-row md:flex-wrap">
-          {items.map((item) =>
-            item.href ? (
-              <a
-                key={item.title}
-                href={item.href}
-                className="flex flex-col md:w-[calc(50%-20px)]"
-              >
-                <WorkCard item={item} />
-              </a>
-            ) : (
-              <div
-                key={item.title}
-                className="flex flex-col md:w-[calc(50%-20px)]"
-              >
-                <WorkCard item={item} />
+        {subtitle && (
+          <p className="mt-2 mb-[32px] text-[16px] text-brand-muted">{subtitle}</p>
+        )}
+        {!subtitle && <div className="mb-[32px]" />}
+        <div className="grid grid-cols-1 gap-[24px] md:grid-cols-2">
+          {items.map((item) => (
+            <a
+              key={item.slug}
+              href={`/projects/${item.slug}`}
+              className="group block"
+            >
+              <div className="aspect-[4/5] overflow-hidden bg-white/10">
+                <img
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  src={item.image}
+                  alt={item.imageAlt}
+                />
               </div>
-            )
-          )}
+              <h3 className="mt-3 text-[22px] font-medium leading-tight tracking-tight text-brand-white md:text-[32px]">
+                {extractText(item.title)}
+              </h3>
+              {item.subtitle && (
+                <p className="mt-1 text-[14px] text-brand-muted md:text-[16px]">{item.subtitle}</p>
+              )}
+            </a>
+          ))}
         </div>
       </div>
     </section>

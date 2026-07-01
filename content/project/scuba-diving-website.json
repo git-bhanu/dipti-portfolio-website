@@ -1,8 +1,22 @@
 {
   "title": "Scuba Diving Website\n",
-  "sortOrder": 2,
+  "sortOrder": 1,
   "slug": "scuba-diving-website",
-  "image": "/HP II (iPad size).jpg",
-  "cardImage": "/HP II (iPad size).jpg",
-  "description": ""
+  "image": "/dbfff907ee653d480c728c777d147e71eb7e721b.jpg",
+  "imageAlt": "Scuba diving website design",
+  "cardImage": "/Scuba-dives-2.jpg",
+  "subtitle": "Simplified structure to make content easier to explore and act on.",
+  "date": "2024-03-01T00:00:00.000Z",
+  "blocks": [
+    {
+      "level": "h3",
+      "heading": "Introduction\n",
+      "_template": "header"
+    },
+    {
+      "leftColumn": "Lacadives, a scuba diving company, needed their website to reflect the depth and excitement of the experience they offer, with a more premium feel built entirely around real imagery and blue as the dominant visual cue.I redesigned it to feel immersive and visually compelling at first glance so when someone lands, they don’t just browse, they want to book.\n",
+      "rightColumn": "",
+      "_template": "twoColumnText"
+    }
+  ]
 }

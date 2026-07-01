@@ -54,25 +54,16 @@ export const ProjectCollection: Collection = {
     },
     {
       type: 'string',
-      name: 'cardImageAlt',
-      label: 'Card Image Alt Text',
+      name: 'subtitle',
+      label: 'Subtitle',
+      description: 'Short tagline shown on cards.',
+      ui: { component: 'textarea' },
     },
     {
       type: 'datetime',
       name: 'date',
       label: 'Date',
       ui: { dateFormat: 'DD MMMM YYYY' },
-    },
-    {
-      type: 'string',
-      name: 'category',
-      label: 'Category',
-    },
-    {
-      type: 'rich-text',
-      name: 'description',
-      label: 'Short Description',
-      description: 'Shown in the card and at top of detail view.',
     },
     {
       type: 'object',

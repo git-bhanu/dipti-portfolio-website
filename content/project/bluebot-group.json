@@ -1,0 +1,33 @@
+{
+  "title": "Bluebot Group\n",
+  "sortOrder": 4,
+  "slug": "bluebot-group",
+  "image": "/bluebot_display.jpg",
+  "imageAlt": "Bluebot Group website design",
+  "cardImage": "/bluebot_display.jpg",
+  "subtitle": "Built to drive action from the first page.",
+  "date": "2024-11-01T00:00:00.000Z",
+  "blocks": [
+    {
+      "level": "h2",
+      "heading": "\\[object Object]\n",
+      "_template": "header"
+    },
+    {
+      "leftColumn": "\\[object Object]\n",
+      "rightColumn": "\\[object Object]\n",
+      "_template": "twoColumnText"
+    },
+    {
+      "width": "wide",
+      "orientation": "landscape",
+      "images": [
+        {
+          "src": "/bluebot_display.jpg",
+          "alt": "Bluebot Group website display"
+        }
+      ],
+      "_template": "image"
+    }
+  ]
+}

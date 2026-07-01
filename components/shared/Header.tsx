@@ -13,8 +13,8 @@ export default function Header({ links }: HeaderProps) {
   const navLinks = links.filter((l) => l.label.toLowerCase() !== 'home');
 
   return (
-    <header className="flex h-[80px] items-center justify-between px-5 md:px-10">
-      <a href="#top" aria-label="Home">
+    <header className="flex h-[80px] items-center justify-between px-5 md:px-[8vw]">
+      <a href="/" aria-label="Home">
         {/* Desktop logo: 200px wide (original dimensions) */}
         <img
           src="/logo.svg"

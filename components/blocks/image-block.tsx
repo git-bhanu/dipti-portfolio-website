@@ -24,7 +24,7 @@ export function ImageBlock({ block }: Props) {
   return (
     <div className='flex flex-col gap-4 md:flex-row md:gap-6'>
       {images.map((img, i) => (
-        <div key={i} className={`relative ${aspectClass} min-w-0 flex-1 overflow-hidden bg-brand-offwhite`}>
+        <div key={i} className={`relative ${aspectClass} min-w-0 flex-1 overflow-hidden bg-white/10`}>
           <Image
             src={img.src!}
             alt={img.alt ?? ''}

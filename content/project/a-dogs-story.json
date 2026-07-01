@@ -1,29 +1,22 @@
 {
-  "title": {
-    "type": "root",
-    "children": [
-      {
-        "type": "p",
-        "children": [{ "type": "text", "text": "A Dogs Story" }]
-      }
-    ]
-  },
+  "title": "A dog story\n",
   "sortOrder": 2,
-  "slug": "a-dogs-story",
-  "image": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1600&q=80",
-  "imageAlt": "Dog portrait",
-  "cardImage": "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80",
-  "cardImageAlt": "Dog portrait",
+  "slug": "a-dog-story",
+  "image": "/dbfff907ee653d480c728c777d147e71eb7e721b.jpg",
+  "imageAlt": "A Dogs Story brand identity",
+  "cardImage": "/Dog's-Story-wall3.jpg",
+  "subtitle": "From cluttered and limiting to premium and built to scale.",
   "date": "2024-06-15T00:00:00.000Z",
-  "category": "Brand Identity",
-  "description": {
-    "type": "root",
-    "children": [
-      {
-        "type": "p",
-        "children": [{ "type": "text", "text": "From cluttered and limiting to premium and built to scale." }]
-      }
-    ]
-  },
-  "blocks": []
+  "blocks": [
+    {
+      "level": "h3",
+      "heading": "Introduction\n",
+      "_template": "header"
+    },
+    {
+      "leftColumn": "Lacadives, a scuba diving company, needed their website to reflect the depth and excitement of the experience they offer, with a more premium feel built entirely around real imagery and blue as the dominant visual cue.I redesigned it to feel immersive and visually compelling at first glance so when someone lands, they don’t just browse, they want to book.\n",
+      "rightColumn": "",
+      "_template": "twoColumnText"
+    }
+  ]
 }

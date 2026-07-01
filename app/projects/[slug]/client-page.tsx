@@ -34,11 +34,16 @@ const titleComponents: Components<object> = {
   italic: (props) => <em className='italic'>{props?.children}</em>,
 };
 
-const descComponents: Components<object> = {
-  p: (props) => <span className='block'>{props?.children}</span>,
-  bold: (props) => <strong className='font-semibold'>{props?.children}</strong>,
-  italic: (props) => <em className='italic'>{props?.children}</em>,
-};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function extractText(content: any): string {
+  if (!content) return '';
+  if (typeof content === 'string') return content.replace(/\n$/, '');
+  if (Array.isArray(content)) return content.map(extractText).join('');
+  if (content.text) return content.text;
+  if (content.children) return extractText(content.children);
+  return '';
+}
 
 function blockWrapperClass(width: string | null | undefined, verticalPadding: string) {
   switch (width) {
@@ -52,22 +57,6 @@ function blockWrapperClass(width: string | null | undefined, verticalPadding: st
   }
 }
 
-function formatDate(iso: string): React.ReactNode {
-  try {
-    const d = new Date(iso);
-    const day = d.getUTCDate();
-    const suffix =
-      day === 1 || day === 21 || day === 31 ? 'st'
-      : day === 2 || day === 22 ? 'nd'
-      : day === 3 || day === 23 ? 'rd'
-      : 'th';
-    const month = d.toLocaleString('en-GB', { month: 'long', timeZone: 'UTC' });
-    const year = d.getUTCFullYear();
-    return <>{day}<sup>{suffix}</sup> {month} {year}</>;
-  } catch {
-    return iso;
-  }
-}
 
 export default function ProjectDetailClientPage({ query, data, variables, slug, sitePage }: Props) {
   const { data: tinaData } = useTina({ query, data, variables });
@@ -93,51 +82,22 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
   const heroImage = tinaImageUrl(project.image);
 
   return (
-    <main className='min-h-screen bg-white'>
+    <main className='min-h-screen bg-brand-black'>
       <div className='bg-brand-black'>
         <Header brand={page.brand ?? 'Serifs & Systems'} links={page.navigation ?? []} />
       </div>
 
-      {/* Back link */}
-      <div className='px-5 pt-6 md:px-[8vw]'>
-        <Link
-          href='/projects'
-          className='inline-flex items-center gap-2 text-meta text-brand-muted hover:text-brand-black transition-colors'
-        >
-          <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth={2} className='size-4'>
-            <path strokeLinecap='round' strokeLinejoin='round' d='M15 19l-7-7 7-7' />
-          </svg>
-          All Projects
-        </Link>
-      </div>
-
       {/* Header */}
-      <div className='px-5 pt-6 pb-6 md:px-[8vw] md:pt-12'>
-        {(project.date || project.category) && (
-          <p className='text-meta text-brand-muted mb-3'>
-            {project.date && <span>{formatDate(project.date)}</span>}
-            {project.date && project.category && ' · '}
-            {project.category && (
-              <strong className='font-medium text-brand-black'>{project.category}</strong>
-            )}
-          </p>
-        )}
-        <h1 className='text-h1 font-medium leading-none tracking-tight text-brand-black'>
-          <TinaMarkdown content={project.title} components={titleComponents} />
+      <div className='px-5 pt-10 pb-6 md:px-[8vw] md:pt-16'>
+        <h1 className='text-h1 font-medium leading-none tracking-tight text-brand-white'>
+          {extractText(project.title)}
         </h1>
-        {project.description && (
-          <div className='mt-4 text-body text-brand-muted max-w-2xl'>
-            <TinaMarkdown content={project.description} components={descComponents} />
-          </div>
-        )}
       </div>
-
-      <div className='mx-5 border-b border-black/10 md:mx-[8vw]' />
 
       {/* Hero image */}
       {heroImage && (
         <div className='mt-8 px-5 md:px-[8vw]'>
-          <div className='relative aspect-video w-full overflow-hidden bg-brand-offwhite'>
+          <div className='relative aspect-video w-full overflow-hidden bg-white/10'>
             <Image
               src={heroImage}
               alt={project.imageAlt ?? ''}
@@ -190,20 +150,21 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
 
       {/* Related projects */}
       {related.length > 0 && (
-        <div className='mt-20 px-5 pb-12 pt-10 md:px-[8vw]'>
-          <p className='text-meta font-medium uppercase tracking-widest text-brand-muted mb-8'>
-            More Projects
-          </p>
+        <div className='mt-20 px-5 pb-16 pt-12 md:px-[8vw]'>
+          <h2 className='text-[32px] md:text-[48px] font-medium leading-none tracking-tight text-brand-white mb-10'>
+            Next Projects
+          </h2>
           <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
             {related.map((p) => {
               const thumb = tinaImageUrl(p.cardImage ?? p.image);
+              const title = extractText(p.title);
               return (
                 <Link
                   key={p.id}
                   href={`/projects/${projectSlug(p)}`}
                   className='group block'
                 >
-                  <div className='relative aspect-[4/3] w-full overflow-hidden bg-brand-offwhite mb-3'>
+                  <div className='relative aspect-[4/3] w-full overflow-hidden bg-white/10 mb-4'>
                     {thumb && (
                       <Image
                         src={thumb}
@@ -214,8 +175,8 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
                       />
                     )}
                   </div>
-                  <h3 className='text-[18px] font-medium leading-tight text-brand-black'>
-                    <TinaMarkdown content={p.title} components={titleComponents} />
+                  <h3 className='text-[20px] font-medium leading-tight text-brand-white'>
+                    {title}
                   </h3>
                 </Link>
               );

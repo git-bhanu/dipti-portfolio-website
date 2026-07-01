@@ -45,11 +45,17 @@ export default function ClientPage(props: ClientPageProps) {
                 key={i}
                 _block={block}
                 title={block.title}
-                items={(block.items ?? []).map((item: any) => ({
-                  ...item,
-                  _raw: item,
-                  imageUrl: tinaImageUrl(item.imageUrl),
-                }))}
+                subtitle={block.subtitle ?? ''}
+                items={(block.items ?? [])
+                  .map((item: any) => item?.project)
+                  .filter((p: any) => p?.__typename === 'Project')
+                  .map((p: any) => ({
+                    title: p.title,
+                    slug: p.slug ?? p._sys?.filename ?? '',
+                    image: tinaImageUrl(p.cardImage ?? p.image),
+                    imageAlt: p.imageAlt ?? '',
+                    subtitle: p.subtitle ?? '',
+                  }))}
                 kicker=""
                 ctaLabel=""
                 ctaHref=""

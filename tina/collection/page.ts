@@ -27,24 +27,22 @@ const worksBlock: Template = {
   label: 'Selected Works',
   fields: [
     { name: 'title', label: 'Section Title', type: 'string', required: true },
+    { name: 'subtitle', label: 'Section Subtitle', type: 'string', ui: { component: 'textarea' } },
     {
       name: 'items',
-      label: 'Work Items',
+      label: 'Projects',
       type: 'object',
       list: true,
       ui: {
-        itemProps: (item) => ({ label: item?.title || 'Work item' }),
+        itemProps: (item) => ({ label: item?.project ?? 'Project' }),
       },
       fields: [
-        { name: 'title', label: 'Title', type: 'string', required: true },
         {
-          name: 'description',
-          label: 'Description',
-          type: 'string',
-          ui: { component: 'textarea' },
+          name: 'project',
+          label: 'Project',
+          type: 'reference',
+          collections: ['project'],
         },
-        { name: 'href', label: 'Link (optional)', type: 'string' },
-        { name: 'imageUrl', label: 'Image', type: 'image', required: true },
       ],
     },
   ],

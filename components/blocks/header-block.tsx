@@ -31,7 +31,7 @@ export function HeaderBlock({ block }: { block: HeaderBlockData }) {
   return (
     <Tag
       data-tina-field={tinaField(block, 'heading')}
-      className={`font-sans ${sizeClass} leading-tight tracking-tight text-brand-black`}
+      className={`font-sans ${sizeClass} leading-tight tracking-tight text-brand-white`}
     >
       <TinaMarkdown content={block.heading} components={components} />
     </Tag>

@@ -20,7 +20,7 @@ export function TwoColumnTextBlock({ block }: { block: TwoColumnTextBlockData })
   if (!block.leftColumn && !block.rightColumn) return null;
 
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 text-[16px] md:text-[18px] leading-snug text-brand-black font-sans'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 text-[16px] md:text-[18px] leading-snug text-brand-white font-sans'>
       {block.leftColumn && (
         <div data-tina-field={tinaField(block, 'leftColumn')}>
           <TinaMarkdown content={block.leftColumn} components={components} />

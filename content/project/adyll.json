@@ -1,29 +1,37 @@
 {
-  "title": {
-    "type": "root",
-    "children": [
-      {
-        "type": "p",
-        "children": [{ "type": "text", "text": "Adyll" }]
-      }
-    ]
-  },
+  "title": "Adyll\n",
   "sortOrder": 3,
   "slug": "adyll",
-  "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80",
-  "imageAlt": "Laptop with design work",
-  "cardImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
-  "cardImageAlt": "Laptop with design work",
+  "image": "/Adyll_Home.jpg",
+  "imageAlt": "Adyll brand and website design",
+  "cardImage": "/Adyll_Home.jpg",
+  "subtitle": "From forgettable to sharp, minimal, and intentional.",
   "date": "2024-09-01T00:00:00.000Z",
-  "category": "Brand Strategy",
-  "description": {
-    "type": "root",
-    "children": [
-      {
-        "type": "p",
-        "children": [{ "type": "text", "text": "From forgettable to sharp, minimal, and intentional." }]
-      }
-    ]
-  },
-  "blocks": []
+  "blocks": [
+    {
+      "level": "h2",
+      "heading": "\\[object Object]\n",
+      "_template": "header"
+    },
+    {
+      "leftColumn": "\\[object Object]\n",
+      "rightColumn": "\\[object Object]\n",
+      "_template": "twoColumnText"
+    },
+    {
+      "width": "wide",
+      "orientation": "landscape",
+      "images": [
+        {
+          "src": "/Adyll_Home.jpg",
+          "alt": "Adyll homepage design"
+        },
+        {
+          "src": "/Adyll-1.png",
+          "alt": "Adyll brand identity detail"
+        }
+      ],
+      "_template": "image"
+    }
+  ]
 }
