@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import TopLoader from '@/components/shared/TopLoader';
+import SmoothScroll from '@/components/shared/SmoothScroll';
 import './globals.css';
 
 const inter = Inter({
@@ -17,7 +19,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        <TopLoader />
+        {children}
+      </body>
     </html>
   );
 }

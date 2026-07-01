@@ -9,6 +9,7 @@ import ServicesSection from '@/components/sections/ServicesSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import CtaSection from '@/components/sections/CtaSection';
 import { tinaImageUrl } from '@/lib/tina-image';
+import PageTransition from '@/components/shared/PageTransition';
 
 type ClientPageProps = {
   query: string;
@@ -25,6 +26,7 @@ export default function ClientPage(props: ClientPageProps) {
     <main className="min-h-screen bg-brand-black">
       <Header brand={page.brand} links={page.navigation ?? []} />
 
+      <PageTransition>
       {page.blocks?.map((block: any, i: number) => {
         switch (block.__typename) {
           case 'SitePageBlocksHero':
@@ -112,6 +114,7 @@ export default function ClientPage(props: ClientPageProps) {
             return null;
         }
       })}
+      </PageTransition>
 
       <Footer
         brand={page.brand}

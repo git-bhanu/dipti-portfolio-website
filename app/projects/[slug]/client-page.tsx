@@ -7,6 +7,7 @@ import { TwoColumnTextBlock } from '@/components/blocks/two-column-text-block';
 import { VideoBlock } from '@/components/blocks/video-block';
 import Footer from '@/components/shared/Footer';
 import Header from '@/components/shared/Header';
+import PageTransition from '@/components/shared/PageTransition';
 import { tinaImageUrl } from '@/lib/tina-image';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -87,6 +88,7 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
         <Header brand={page.brand ?? 'Serifs & Systems'} links={page.navigation ?? []} />
       </div>
 
+      <PageTransition>
       {/* Header */}
       <div className='px-5 pt-10 pb-6 md:px-[8vw] md:pt-16'>
         <h1 className='text-h1 font-medium leading-none tracking-tight text-brand-white'>
@@ -184,6 +186,8 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
           </div>
         </div>
       )}
+
+      </PageTransition>
 
       <div className='bg-brand-black'>
         <Footer
