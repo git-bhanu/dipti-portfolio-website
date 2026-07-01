@@ -104,7 +104,8 @@
       "buttonLabel": "Start a Project",
       "buttonHref": "mailto:serifsandsystems@gmail.com",
       "galleryImages": [
-        "/TCM1.jpg"
+        "/TCM1.jpg",
+        ""
       ],
       "featuredImage": "/Adyll.png",
       "_template": "cta"
