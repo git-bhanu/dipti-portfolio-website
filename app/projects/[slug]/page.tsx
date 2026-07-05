@@ -2,6 +2,22 @@ import client from '@/tina/__generated__/client';
 import { notFound } from 'next/navigation';
 import ProjectDetailClientPage from './client-page';
 
+// Static export needs every dynamic path known at build time.
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const projectsResult = await (client.queries as any).projectConnection({});
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const edges: any[] = projectsResult.data?.projectConnection?.edges ?? [];
+  return edges
+    .map((e: { node: unknown }) => e?.node)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .map((n: any) => (n?.slug ?? n?._sys?.filename ?? '').toLowerCase())
+    .filter(Boolean)
+    .map((slug: string) => ({ slug }));
+}
+
 export default async function ProjectDetailPage({
   params,
 }: {
