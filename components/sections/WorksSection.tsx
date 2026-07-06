@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 
 type WorkItem = {
@@ -37,7 +38,7 @@ export default function WorksSection({
 }: WorksSectionProps) {
   return (
     <section className="py-[40px]" id="works">
-      <div className="mx-auto w-full max-w-[1920px] px-5 md:px-10">
+      <div className="w-full px-5 md:px-[8vw]">
         <h2
           data-tina-field={_block ? tinaField(_block, "title") : undefined}
           className="text-[48px] font-medium text-brand-white"
@@ -50,7 +51,7 @@ export default function WorksSection({
         {!subtitle && <div className="mb-[32px]" />}
         <div className="grid grid-cols-1 gap-[24px] md:grid-cols-2">
           {items.map((item) => (
-            <a
+            <Link
               key={item.slug}
               href={`/projects/${item.slug}`}
               className="group block"
@@ -68,7 +69,7 @@ export default function WorksSection({
               {item.subtitle && (
                 <p className="mt-1 text-[14px] text-brand-muted md:text-[16px]">{item.subtitle}</p>
               )}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

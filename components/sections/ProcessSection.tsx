@@ -20,7 +20,7 @@ type ProcessSectionProps = {
 export default function ProcessSection({ _block, title, description, imageUrl, items }: ProcessSectionProps) {
   return (
     <section className="py-[80px]" id="process">
-      <div className="mx-auto w-full max-w-[1920px] px-5 md:px-10">
+      <div className="w-full px-5 md:px-[8vw]">
         <div className="flex flex-col gap-[60px] md:flex-row md:items-start md:gap-[80px]">
 
           {/* Left: heading + steps */}

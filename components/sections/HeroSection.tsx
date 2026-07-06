@@ -17,7 +17,7 @@ export default function HeroSection({
   ctaHref = "#contact",
 }: HeroSectionProps) {
   return (
-    <section className="flex min-h-[60vh] flex-col items-center justify-center gap-6 px-8 py-[80px] md:gap-[64px]">
+    <section className="flex min-h-[60vh] flex-col items-center justify-center gap-6 px-5 py-[80px] md:gap-[64px] md:px-[8vw]">
       <div className="flex flex-col items-center gap-6 md:gap-[32px]">
         <h1
           data-tina-field={_block ? tinaField(_block, "title") : undefined}
