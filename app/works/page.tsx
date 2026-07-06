@@ -42,7 +42,7 @@ export default async function WorksPage() {
 
   return (
     <main className="min-h-screen bg-brand-black">
-      <Header brand={page.brand} links={(page.navigation ?? []).filter(Boolean)} />
+      <Header brand={page.brand} links={(page.navigation ?? []).filter((l): l is { label: string; href: string } => l != null)} />
       <PageTransition>
         <section className="py-[40px]">
           <div className="w-full px-5 md:px-[8vw]">
