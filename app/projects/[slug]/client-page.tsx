@@ -95,6 +95,11 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
         <h1 className='text-h1 font-medium leading-none tracking-tight text-brand-white'>
           {extractText(project.title)}
         </h1>
+        {project.subtitle && (
+          <p className='mt-3 text-[16px] md:text-[18px] text-brand-muted leading-snug'>
+            {project.subtitle}
+          </p>
+        )}
       </div>
 
       {/* Hero image */}
