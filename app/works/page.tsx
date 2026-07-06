@@ -40,9 +40,13 @@ export default async function WorksPage() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .sort((a: any, b: any) => (a.sortOrder ?? 999) - (b.sortOrder ?? 999));
 
+  const navLinks = (page.navigation ?? [])
+    .filter((l) => l != null)
+    .map(({ label, href }) => ({ label, href }));
+
   return (
     <main className="min-h-screen bg-brand-black">
-      <Header brand={page.brand} links={(page.navigation ?? []).filter((l): l is { label: string; href: string } => l != null)} />
+      <Header brand={page.brand} links={navLinks} />
       <PageTransition>
         <section className="py-[40px]">
           <div className="w-full px-5 md:px-[8vw]">
