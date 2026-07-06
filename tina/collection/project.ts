@@ -1,6 +1,7 @@
 import type { Collection } from 'tinacms';
 import { headerBlock } from '../blocks/header-block';
 import { imageBlock } from '../blocks/image-block';
+import { projectInfoBlock } from '../blocks/project-info-block';
 import { spaceBlock } from '../blocks/space-block';
 import { twoColumnTextBlock } from '../blocks/two-column-text-block';
 import { videoBlock } from '../blocks/video-block';
@@ -71,7 +72,7 @@ export const ProjectCollection: Collection = {
       label: 'Content Blocks',
       list: true,
       ui: { visualSelector: true },
-      templates: [headerBlock, twoColumnTextBlock, imageBlock, videoBlock, spaceBlock],
+      templates: [headerBlock, twoColumnTextBlock, projectInfoBlock, imageBlock, videoBlock, spaceBlock],
     },
   ],
 };

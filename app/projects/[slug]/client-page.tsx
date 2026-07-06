@@ -2,6 +2,7 @@
 
 import { HeaderBlock } from '@/components/blocks/header-block';
 import { ImageBlock } from '@/components/blocks/image-block';
+import { ProjectInfoBlock } from '@/components/blocks/project-info-block';
 import { SpaceBlock } from '@/components/blocks/space-block';
 import { TwoColumnTextBlock } from '@/components/blocks/two-column-text-block';
 import { VideoBlock } from '@/components/blocks/video-block';
@@ -127,6 +128,12 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
                 return (
                   <div key={i} className={blockWrapperClass('wide', 'py-4')}>
                     <TwoColumnTextBlock block={block} />
+                  </div>
+                );
+              case 'ProjectBlocksProjectInfo':
+                return (
+                  <div key={i} className={blockWrapperClass('wide', 'py-4')}>
+                    <ProjectInfoBlock block={block} />
                   </div>
                 );
               case 'ProjectBlocksVideo':

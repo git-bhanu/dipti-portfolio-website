@@ -19,6 +19,16 @@
       "_template": "twoColumnText"
     },
     {
+      "leftItems": [
+        {
+          "label": "SERVICES",
+          "value": "Brand Identify\n"
+        }
+      ],
+      "infoText": "",
+      "_template": "projectInfo"
+    },
+    {
       "width": "wide",
       "images": [
         {
