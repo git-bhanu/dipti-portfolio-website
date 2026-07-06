@@ -44,6 +44,10 @@ export default async function WorksPage() {
     .filter((l) => l != null)
     .map(({ label, href }) => ({ label, href }));
 
+  const footerLinks = (page.footer?.links ?? [])
+    .filter((l) => l != null)
+    .map(({ label, href }) => ({ label, href }));
+
   return (
     <main className="min-h-screen bg-brand-black">
       <Header brand={page.brand} links={navLinks} />
@@ -85,7 +89,7 @@ export default async function WorksPage() {
       </PageTransition>
       <Footer
         brand={page.brand}
-        links={page.footer?.links ?? []}
+        links={footerLinks}
         email={page.footer?.email ?? ''}
         instagramHref={page.footer?.instagramHref ?? ''}
       />
