@@ -22,6 +22,7 @@
       "width": "wide",
       "orientation": "landscape",
       "images": [
+        {},
         {
           "src": "/bluebot-hero_phone.jpg",
           "alt": "Bluebot Group website display"
