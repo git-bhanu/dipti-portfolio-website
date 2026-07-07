@@ -1,7 +1,7 @@
 {
   "title": "Adyll\n",
   "sortOrder": 3,
-  "slug": "adyll",
+  "slug": "Adyll",
   "image": "/Adyll_Home.jpg",
   "imageAlt": "Adyll brand and website design",
   "cardImage": "/Adyll_Home.jpg",
@@ -20,14 +20,14 @@
     },
     {
       "width": "wide",
-      "orientation": "landscape",
+      "orientation": "portrait",
       "images": [
         {
-          "src": "/Adyll_Home.jpg",
+          "src": "/adyll_desktop3.jpg",
           "alt": "Adyll homepage design"
         },
         {
-          "src": "/Adyll-1.png",
+          "src": "/adyll-wall3.jpg",
           "alt": "Adyll brand identity detail"
         }
       ],
