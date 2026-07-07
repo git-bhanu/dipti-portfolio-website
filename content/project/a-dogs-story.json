@@ -39,6 +39,16 @@
         }
       ],
       "_template": "image"
+    },
+    {
+      "width": "full",
+      "orientation": "portrait",
+      "images": [
+        {
+          "src": "/laca_homepage.jpg"
+        }
+      ],
+      "_template": "image"
     }
   ]
 }
