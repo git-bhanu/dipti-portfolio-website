@@ -23,10 +23,13 @@
       "orientation": "landscape",
       "images": [
         {
-          "src": "/bluebot_display.jpg",
+          "src": "/bluebot-hero_phone.jpg",
           "alt": "Bluebot Group website display"
         }
       ],
+      "_template": "image"
+    },
+    {
       "_template": "image"
     }
   ]
