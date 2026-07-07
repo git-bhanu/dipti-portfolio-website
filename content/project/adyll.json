@@ -23,12 +23,22 @@
       "orientation": "portrait",
       "images": [
         {
-          "src": "/adyll_desktop3.jpg",
+          "src": "/Adyll.png",
           "alt": "Adyll homepage design"
         },
         {
           "src": "/adyll-wall3.jpg",
           "alt": "Adyll brand identity detail"
+        }
+      ],
+      "_template": "image"
+    },
+    {
+      "width": "full",
+      "orientation": "portrait",
+      "images": [
+        {
+          "src": "/Long-page-desktop-adyll-mockup.jpg"
         }
       ],
       "_template": "image"
