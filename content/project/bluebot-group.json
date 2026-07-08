@@ -2,7 +2,7 @@
   "title": "Bluebot Group\n",
   "sortOrder": 4,
   "slug": "bluebot-group",
-  "image": "/bluebot_display.jpg",
+  "image": "/bluebot-hero_phone.jpg",
   "imageAlt": "Bluebot Group website design",
   "cardImage": "/bluebot_display.jpg",
   "subtitle": "Built to drive action from the first page.",
@@ -20,12 +20,15 @@
     },
     {
       "width": "wide",
-      "orientation": "landscape",
+      "orientation": "portrait",
       "images": [
         {},
         {
-          "src": "/bluebot-hero_phone.jpg",
+          "src": "/bb-3.jpg",
           "alt": "Bluebot Group website display"
+        },
+        {
+          "src": "/bb-2.jpg"
         }
       ],
       "_template": "image"
