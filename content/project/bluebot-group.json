@@ -22,6 +22,10 @@
         {
           "label": "Client",
           "value": "Bluebot Group\n"
+        },
+        {
+          "label": "Location",
+          "value": "Delhi India\n"
         }
       ],
       "infoText": "Designed for an ROI-focused client, the site leads with a clear choice and a form-first approach so users know exactly what to do the moment they land.Supporting pages stay simple and visual, giving just enough context while keeping the focus on conversion.\n",
