@@ -3,6 +3,8 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   // Emit a fully static site to `out/` for Cloudflare Pages.
   output: 'export',
+  // Serve public/admin/index.html at /admin (not just /admin/index.html).
+  trailingSlash: true,
   images: {
     // The Cloudflare Pages static host has no Next image optimizer,
     // so images are served as-is.
