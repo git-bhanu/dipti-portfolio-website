@@ -14,6 +14,12 @@
       "_template": "header"
     },
     {
+      "leftItems": [
+        {
+          "label": "Services",
+          "value": "Website Design that converts\n"
+        }
+      ],
       "infoText": "Designed for an ROI-focused client, the site leads with a clear choice and a form-first approach so users know exactly what to do the moment they land.Supporting pages stay simple and visual, giving just enough context while keeping the focus on conversion.\n",
       "liveSiteUrl": "https://bluebotgroup.com/",
       "_template": "projectInfo"
