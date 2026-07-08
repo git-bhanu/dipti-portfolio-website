@@ -49,6 +49,17 @@
     },
     {
       "_template": "image"
+    },
+    {
+      "width": "wide",
+      "orientation": "portrait",
+      "images": [
+        {
+          "src": "/Desktop_bluebot.jpg"
+        },
+        {}
+      ],
+      "_template": "image"
     }
   ]
 }
