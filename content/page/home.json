@@ -77,7 +77,7 @@
     {
       "title": "Our Process",
       "description": "Built to influence perception and create preference.",
-      "imageUrl": "/Our process.png",
+      "imageUrl": "/Our%20process.png",
       "items": [
         {
           "title": "Discovery & Insights",
@@ -106,8 +106,7 @@
       "galleryImages": [
         "/TCM1.jpg",
         "/Dog's-Story-wall3.jpg",
-        "/Bluebot%20post%2023.jpg",
-        "/Frnship-lane-7villas-mockup-tab.jpg"
+        "/Bluebot%20post%2023.jpg"
       ],
       "featuredImage": "/ChatGPT%20Image%20Jul%202,%202026,%2001_46_09%20AM.png",
       "_template": "cta"
