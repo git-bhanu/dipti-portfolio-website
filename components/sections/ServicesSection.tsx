@@ -26,7 +26,7 @@ function ServiceCard({ item }: { item: ServiceItem }) {
 
   return (
     <div
-      className="relative h-[490px] w-full overflow-hidden bg-brand-muted/20 md:flex-1"
+      className="relative aspect-[9/16] w-full overflow-hidden bg-brand-muted/20 md:flex-1"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
