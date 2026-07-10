@@ -10,8 +10,13 @@
   "blocks": [
     {
       "level": "h2",
-      "heading": "\\[object Object]\n",
+      "heading": "Project Information\n",
       "_template": "header"
+    },
+    {
+      "infoText": "Adyll was designed to create an experience that feels desirable from the very first interaction. The project focused on crafting a distinctive visual identity and digital experience that reflected the brand's personality while making every touchpoint feel effortless, memorable, and ultimately encouraging users to book with confidence.\n",
+      "liveSiteUrl": "https://adyll.com/",
+      "_template": "projectInfo"
     },
     {
       "leftColumn": "\\[object Object]\n",
