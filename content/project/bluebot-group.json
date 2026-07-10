@@ -1,7 +1,7 @@
 {
+  "slug": "bluebot-group",
   "title": "Bluebot Group\n",
   "sortOrder": 4,
-  "slug": "bluebot-group",
   "image": "/bluebot-hero_phone.jpg",
   "imageAlt": "Bluebot Group website design",
   "cardImage": "/bluebot_display.jpg",
@@ -10,7 +10,7 @@
   "blocks": [
     {
       "level": "h2",
-      "heading": "\\[object Object]\n",
+      "heading": "Project  Information\n",
       "_template": "header"
     },
     {
