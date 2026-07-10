@@ -4,7 +4,7 @@
   "sortOrder": 3,
   "image": "/adyll_desktop.jpg",
   "imageAlt": "Adyll brand and website design",
-  "cardImage": "/Adyll_Home.jpg",
+  "cardImage": "",
   "subtitle": "From forgettable to sharp, minimal, and intentional. ",
   "date": "2024-09-01T00:00:00.000Z",
   "blocks": [
@@ -33,11 +33,6 @@
       "_template": "projectInfo"
     },
     {
-      "leftColumn": "\\[object Object]\n",
-      "rightColumn": "\\[object Object]\n",
-      "_template": "twoColumnText"
-    },
-    {
       "width": "wide",
       "orientation": "portrait",
       "images": [
@@ -58,6 +53,15 @@
       "images": [
         {
           "src": "/Long-page-desktop-adyll-mockup.jpg"
+        }
+      ],
+      "_template": "image"
+    },
+    {
+      "width": "wide",
+      "images": [
+        {
+          "src": "/adyll_desktop2.jpg"
         }
       ],
       "_template": "image"
