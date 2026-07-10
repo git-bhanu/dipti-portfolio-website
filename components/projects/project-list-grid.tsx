@@ -4,7 +4,6 @@ import { type ProjectCardData, ProjectListCard } from './project-list-card';
 
 export interface ProjectListItem {
   id: string;
-  slug?: string | null;
   _sys: { filename: string };
   data: ProjectCardData;
 }
@@ -14,7 +13,7 @@ interface ProjectListGridProps {
 }
 
 function itemSlug(item: ProjectListItem) {
-  return (item.slug ?? item._sys.filename).toLowerCase();
+  return item._sys.filename.toLowerCase();
 }
 
 export function ProjectListGrid({ items }: ProjectListGridProps) {

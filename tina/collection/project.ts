@@ -32,12 +32,6 @@ export const ProjectCollection: Collection = {
       description: 'Lower numbers appear first.',
     },
     {
-      type: 'string',
-      name: 'slug',
-      label: 'URL Slug',
-      description: 'Lowercase, hyphens only.',
-    },
-    {
       type: 'image',
       name: 'image',
       label: 'Hero Image',

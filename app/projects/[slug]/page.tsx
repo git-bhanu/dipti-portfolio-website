@@ -13,7 +13,7 @@ export async function generateStaticParams() {
   return edges
     .map((e: { node: unknown }) => e?.node)
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .map((n: any) => (n?.slug ?? n?._sys?.filename ?? '').toLowerCase())
+    .map((n: any) => (n?._sys?.filename ?? '').toLowerCase())
     .filter(Boolean)
     .map((slug: string) => ({ slug }));
 }
@@ -44,7 +44,7 @@ export default async function ProjectDetailPage({
     .map((e: { node: unknown }) => e?.node)
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .find((n: any) => {
-      const nodeSlug = (n?.slug ?? n?._sys?.filename ?? '').toLowerCase();
+      const nodeSlug = (n?._sys?.filename ?? '').toLowerCase();
       return nodeSlug === slug.toLowerCase();
     });
 

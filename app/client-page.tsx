@@ -53,7 +53,7 @@ export default function ClientPage(props: ClientPageProps) {
                   .filter((p: any) => p?.__typename === 'Project')
                   .map((p: any) => ({
                     title: p.title,
-                    slug: p.slug ?? p._sys?.filename ?? '',
+                    slug: p._sys?.filename ?? '',
                     image: tinaImageUrl(p.cardImage ?? p.image),
                     imageAlt: p.imageAlt ?? '',
                     subtitle: p.subtitle ?? '',

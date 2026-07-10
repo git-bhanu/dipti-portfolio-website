@@ -72,7 +72,7 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
       return aO - bO;
     });
 
-  const projectSlug = (p: ProjectNode) => (p.slug ?? p._sys?.filename ?? '').toLowerCase();
+  const projectSlug = (p: ProjectNode) => (p._sys?.filename ?? '').toLowerCase();
 
   const project = projects.find((p) => projectSlug(p) === slug.toLowerCase());
   const related = projects.filter((p) => projectSlug(p) !== slug.toLowerCase()).slice(0, 3);
