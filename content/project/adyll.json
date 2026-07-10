@@ -1,8 +1,8 @@
 {
+  "slug": "Adyll",
   "title": "Adyll\n",
   "sortOrder": 3,
-  "slug": "Adyll",
-  "image": "/Adyll_Home.jpg",
+  "image": "/adyll_desktop.jpg",
   "imageAlt": "Adyll brand and website design",
   "cardImage": "/Adyll_Home.jpg",
   "subtitle": "From forgettable to sharp, minimal, and intentional. ",
@@ -23,7 +23,7 @@
       "orientation": "portrait",
       "images": [
         {
-          "src": "/Adyll.png",
+          "src": "/Adyll-1.png",
           "alt": "Adyll homepage design"
         },
         {
