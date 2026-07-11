@@ -57,19 +57,19 @@
       "description": "Each service is designed to strengthen how the market perceives you and positions you as the premium choice.",
       "items": [
         {
+          "title": "Brand Strategy",
+          "imageUrl": "/S&S Services.jpg",
+          "description": "Positioning, messaging, and market clarity that guides all design decisions."
+        },
+        {
           "title": "Brand Identity",
-          "imageUrl": "/Branding.png",
+          "imageUrl": "/brand idenetiy palm tree.jpg",
           "description": "Logo, color, typography, and \nvisual language that signal premium positioning."
         },
         {
           "title": "Website Design",
-          "imageUrl": "/WEBSITE3.jpg",
+          "imageUrl": "/SCUBA-TAB-MOCKUP.jpg",
           "description": "A digital presence that attracts better clients and reflects your true value."
-        },
-        {
-          "title": "Brand Strategy",
-          "imageUrl": "/BRAND-strategy.jpg",
-          "description": "Positioning, messaging, and market clarity that guides all design decisions."
         }
       ],
       "_template": "services"
