@@ -68,7 +68,7 @@
         },
         {
           "title": "Website Design",
-          "imageUrl": "/3 4.jpg",
+          "imageUrl": "/S&S Services (3).jpg",
           "description": "A digital presence that attracts better clients and reflects your true value."
         }
       ],
@@ -81,19 +81,19 @@
       "items": [
         {
           "title": "Discovery & Insights",
-          "description": "Understanding what makes your business distinct starts with listening — to your vision, market, competition, and constraints."
+          "description": "Understanding your business, audience, and market."
         },
         {
-          "title": "Shaping the Strategy",
-          "description": "We define positioning, messaging, and visual direction — bringing clarity to what your brand stands for and how it should be expressed."
+          "title": "Strategy",
+          "description": "Defining positioning, messaging, and direction."
         },
         {
-          "title": "Refine & Design",
-          "description": "Removing friction, noise, and inconsistency — turning clarity into systems people can experience."
+          "title": "Design",
+          "description": "Translating strategy into clear, cohesive systems."
         },
         {
-          "title": "Launch & Evolve",
-          "description": "Supporting implementation, refinement, and growth as your brand takes shape in the real world."
+          "title": "Launch",
+          "description": "Supporting implementation and future growth."
         }
       ],
       "_template": "process"
