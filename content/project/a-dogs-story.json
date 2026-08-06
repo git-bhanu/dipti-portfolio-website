@@ -37,9 +37,15 @@
       "orientation": "portrait",
       "images": [
         {
-          "src": "/laca_homepage.jpg"
+          "src": "/Mobile%20UI%20Sample%201.jpg"
+        },
+        {
+          "src": "/Dog's-Story-wall3.jpg"
         }
       ],
+      "_template": "image"
+    },
+    {
       "_template": "image"
     }
   ]
