@@ -37,12 +37,15 @@
       "orientation": "portrait",
       "images": [
         {
-          "src": "/Mobile%20UI%20Sample%201.jpg"
+          "src": "/Dog's-Story-wall3.jpg"
         },
         {
-          "src": "/Dog's-Story-wall3.jpg"
+          "src": "/Mobile%20UI%20Sample%201.jpg"
         }
       ],
+      "_template": "image"
+    },
+    {
       "_template": "image"
     },
     {
