@@ -1,8 +1,8 @@
 {
+  "slug": "a-dogs-story",
   "title": "A dog story\n",
   "sortOrder": 2,
-  "slug": "a-dogs-story",
-  "image": "/HP I.jpg",
+  "image": "/ADS-Website.jpg",
   "imageAlt": "A Dogs Story brand identity",
   "cardImage": "/Dog's-Story-wall3.jpg",
   "subtitle": "From cluttered and limiting to premium and built to scale.",
@@ -28,8 +28,8 @@
           "value": "Delhi, India\n"
         }
       ],
-      "infoText": "Adyll was designed to create an experience that feels desirable from the very first interaction. The project focused on crafting a distinctive visual identity and digital experience that reflected the brand's personality while making every touchpoint feel effortless, memorable, and ultimately encouraging users to book with confidence.\n",
-      "liveSiteUrl": "https://adyll.com/",
+      "infoText": "Redesign the into a structured, templatized system. A clean, premium, and flexible enough to handle multiple room types, galleries, policies, and future expansion without breaking.\n",
+      "liveSiteUrl": "https://www.adogsstory.co/",
       "_template": "projectInfo"
     },
     {
