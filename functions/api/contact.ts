@@ -72,13 +72,20 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     const chatIds = env.TELEGRAM_CHAT_ID.split(',').map((id) => id.trim()).filter(Boolean);
 
     await Promise.all(
-      chatIds.map((chatId) =>
-        fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' }),
-        }).catch((err) => console.error('Telegram notify failed', chatId, err))
-      )
+      chatIds.map(async (chatId) => {
+        try {
+          const res = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' }),
+          });
+          if (!res.ok) {
+            console.error('Telegram notify failed', chatId, res.status, await res.text());
+          }
+        } catch (err) {
+          console.error('Telegram notify failed', chatId, err);
+        }
+      })
     );
   }
 
