@@ -94,7 +94,13 @@
       "_template": "image"
     },
     {
-      "_template": "projectInfo"
+      "width": "wide",
+      "images": [
+        {
+          "src": "/Brand Identity Portfolio (2).jpg"
+        }
+      ],
+      "_template": "image"
     }
   ]
 }
