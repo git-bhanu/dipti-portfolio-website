@@ -51,6 +51,9 @@
         },
         {
           "project": "content/project/bluebot-group.json"
+        },
+        {
+          "project": ""
         }
       ],
       "_template": "works"
