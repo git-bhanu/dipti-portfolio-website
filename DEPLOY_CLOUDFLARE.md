@@ -38,6 +38,8 @@ Repo → **Settings → Secrets and variables → Actions → New repository sec
 
 > Tip: copy the three Tina values straight from your Netlify site's environment settings.
 
+Google Analytics is configured from content, not a secret — see below.
+
 ### 4. Deploy
 Push to `main` (or run the workflow manually via **Actions → Deploy to Cloudflare Pages → Run workflow**).
 The first successful run publishes to `https://dipti-portfolio-website.pages.dev`.
@@ -52,6 +54,13 @@ The first successful run publishes to `https://dipti-portfolio-website.pages.dev
 Cloudflare Pages static hosting is **free** — unlimited requests and bandwidth,
 500 builds/month on the free plan (you build in GitHub Actions, so that limit is irrelevant).
 GitHub Actions build minutes are covered by your Pro plan.
+
+## Google Analytics
+
+Set from Tina, not an env var: **/admin** → Pages → home → **Google Analytics Measurement ID**
+(a top-level field, e.g. `G-XXXXXXXXXX`). Saving triggers the normal content-commit ->
+Action -> deploy flow. Leave it blank to disable analytics entirely — `GoogleAnalytics`
+(`components/shared/GoogleAnalytics.tsx`) renders nothing without an id.
 
 ## Notes / trade-offs
 

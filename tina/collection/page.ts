@@ -162,6 +162,12 @@ export const PageCollection: Collection = {
     { name: 'brand', label: 'Brand Name', type: 'string', required: true },
     { name: 'seoTitle', label: 'SEO Title', type: 'string' },
     {
+      name: 'googleAnalyticsId',
+      label: 'Google Analytics Measurement ID',
+      type: 'string',
+      description: 'GA4 measurement id, e.g. G-XXXXXXXXXX. Leave blank to disable analytics.',
+    },
+    {
       name: 'navigation',
       label: 'Navigation Links',
       type: 'object',
