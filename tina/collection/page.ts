@@ -28,6 +28,8 @@ const worksBlock: Template = {
   fields: [
     { name: 'title', label: 'Section Title', type: 'string', required: true },
     { name: 'subtitle', label: 'Section Subtitle', type: 'string', ui: { component: 'textarea' } },
+    { name: 'ctaLabel', label: 'CTA Label', type: 'string' },
+    { name: 'ctaHref', label: 'CTA Link', type: 'string' },
     {
       name: 'items',
       label: 'Projects',
@@ -127,6 +129,9 @@ const ctaBlock: Template = {
     },
     { name: 'buttonLabel', label: 'Button Label', type: 'string' },
     { name: 'buttonHref', label: 'Button Link', type: 'string' },
+    { name: 'personName', label: 'Person Name', type: 'string' },
+    { name: 'personRole', label: 'Person Role', type: 'string' },
+    { name: 'personPhoto', label: 'Person Photo', type: 'image' },
     {
       name: 'galleryImages',
       label: 'Gallery Images',

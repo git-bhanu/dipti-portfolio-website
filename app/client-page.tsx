@@ -59,8 +59,8 @@ export default function ClientPage(props: ClientPageProps) {
                     subtitle: p.subtitle ?? '',
                   }))}
                 kicker=""
-                ctaLabel=""
-                ctaHref=""
+                ctaLabel={block.ctaLabel ?? ''}
+                ctaHref={block.ctaHref ?? ''}
               />
             );
 
@@ -103,6 +103,9 @@ export default function ClientPage(props: ClientPageProps) {
                 description={block.description ?? ''}
                 buttonLabel={block.buttonLabel ?? ''}
                 buttonHref={block.buttonHref ?? ''}
+                personName={block.personName ?? ''}
+                personRole={block.personRole ?? ''}
+                personPhoto={tinaImageUrl(block.personPhoto)}
                 galleryImages={(block.galleryImages ?? []).map(tinaImageUrl)}
                 featuredImage={tinaImageUrl(block.featuredImage)}
                 kicker=""

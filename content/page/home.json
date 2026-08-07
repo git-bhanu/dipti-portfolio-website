@@ -36,6 +36,8 @@
     {
       "title": "Selected Works",
       "subtitle": "A curated look at recent brand and web projects.",
+      "ctaLabel": "See all works",
+      "ctaHref": "/works",
       "items": [
         {
           "project": "content/project/scuba-diving-website.json"
@@ -99,10 +101,13 @@
       "_template": "process"
     },
     {
-      "title": "Ready to invest in perception?",
-      "description": "We take limited projects each year.",
-      "buttonLabel": "Start a Project",
+      "title": "Let's build a brand with personality.",
+      "description": "You don't need to have everything figured out.\nIf your business deserves a thoughtful brand, we'll find the right direction together.",
+      "buttonLabel": "Book a Call",
       "buttonHref": "/contact",
+      "personName": "Dipti Singh",
+      "personRole": "Brand Strategy • Identity • Websites",
+      "personPhoto": "/dipti.jpg",
       "galleryImages": [
         "/TCM1.jpg",
         "/Dog's-Story-wall3.jpg",

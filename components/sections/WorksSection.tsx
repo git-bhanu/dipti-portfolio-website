@@ -34,17 +34,30 @@ export default function WorksSection({
   _block,
   title,
   subtitle,
+  ctaLabel,
+  ctaHref,
   items,
 }: WorksSectionProps) {
   return (
     <section className="py-[40px]" id="works">
       <div className="w-full px-5 md:px-[8vw]">
-        <h2
-          data-tina-field={_block ? tinaField(_block, "title") : undefined}
-          className="text-h3 font-medium text-brand-white"
-        >
-          {title}
-        </h2>
+        <div className="flex items-start justify-between gap-4">
+          <h2
+            data-tina-field={_block ? tinaField(_block, "title") : undefined}
+            className="text-h3 font-medium text-brand-white"
+          >
+            {title}
+          </h2>
+          {ctaLabel && ctaHref && (
+            <Link
+              href={ctaHref}
+              data-tina-field={_block ? tinaField(_block, "ctaLabel") : undefined}
+              className="shrink-0 pt-2 text-[14px] font-medium uppercase tracking-[-0.42px] text-brand-white underline underline-offset-4"
+            >
+              {ctaLabel}
+            </Link>
+          )}
+        </div>
         {subtitle && (
           <p className="mt-2 mb-[32px] text-[16px] text-brand-muted">{subtitle}</p>
         )}

@@ -9,6 +9,9 @@ type CtaSectionProps = {
   buttonLabel: string;
   buttonHref: string;
   caption: string;
+  personName?: string;
+  personRole?: string;
+  personPhoto?: string;
   galleryImages: string[];
   featuredImage: string;
 };
@@ -46,25 +49,58 @@ function CtaContent({
   description,
   buttonLabel,
   buttonHref,
-}: Pick<CtaSectionProps, '_block' | 'title' | 'description' | 'buttonLabel' | 'buttonHref'>) {
+  personName,
+  personRole,
+  personPhoto,
+}: Pick<CtaSectionProps, '_block' | 'title' | 'description' | 'buttonLabel' | 'buttonHref' | 'personName' | 'personRole' | 'personPhoto'>) {
+  const paragraphs = description.split('\n').map((line) => line.trim()).filter(Boolean);
+
   return (
     <div className="flex flex-col items-start">
       <h2
         data-tina-field={_block ? tinaField(_block, 'title') : undefined}
-        className="text-h3 font-medium leading-tight text-brand-white"
+        className="text-h3 font-medium leading-tight text-brand-white md:text-h2"
       >
         {title}
       </h2>
-      <p
-        data-tina-field={_block ? tinaField(_block, 'description') : undefined}
-        className="mt-[10px] mb-[32px] text-meta text-brand-muted"
-      >
-        {description}
-      </p>
+
+      <div data-tina-field={_block ? tinaField(_block, 'description') : undefined} className="mt-[20px] flex flex-col gap-[12px]">
+        {paragraphs.map((paragraph, i) => (
+          <p key={i} className="text-meta text-brand-muted">
+            {paragraph}
+          </p>
+        ))}
+      </div>
+
+      {(personName || personPhoto) && (
+        <div className="mt-[32px] flex items-center gap-[12px]">
+          {personPhoto && (
+            <img
+              data-tina-field={_block ? tinaField(_block, 'personPhoto') : undefined}
+              src={personPhoto}
+              alt={personName ?? ''}
+              className="h-[48px] w-[48px] shrink-0 rounded-full object-cover"
+            />
+          )}
+          <div className="flex flex-col">
+            {personName && (
+              <span data-tina-field={_block ? tinaField(_block, 'personName') : undefined} className="text-[13px] font-medium uppercase tracking-[-0.26px] text-brand-white">
+                {personName}
+              </span>
+            )}
+            {personRole && (
+              <span data-tina-field={_block ? tinaField(_block, 'personRole') : undefined} className="text-[13px] text-brand-muted">
+                {personRole}
+              </span>
+            )}
+          </div>
+        </div>
+      )}
+
       <a
         href={buttonHref}
         data-tina-field={_block ? tinaField(_block, 'buttonLabel') : undefined}
-        className="flex h-[40px] items-center justify-center rounded-[8px] bg-brand-white px-6 text-[14px] font-medium tracking-[-0.42px] text-brand-black"
+        className="mt-[32px] text-[14px] font-medium tracking-[-0.42px] text-brand-white underline underline-offset-4"
       >
         {buttonLabel}
       </a>
@@ -72,20 +108,49 @@ function CtaContent({
   );
 }
 
-export default function CtaSection({ _block, title, description, buttonLabel, buttonHref, galleryImages, featuredImage }: CtaSectionProps) {
+export default function CtaSection({
+  _block,
+  title,
+  description,
+  buttonLabel,
+  buttonHref,
+  personName,
+  personRole,
+  personPhoto,
+  galleryImages,
+  featuredImage,
+}: CtaSectionProps) {
   return (
     <section className="py-[64px]" id="contact">
       <div className="w-full px-5 md:px-[8vw]">
         {/* Mobile: text → photo */}
         <div className="flex flex-col gap-[32px] md:hidden">
-          <CtaContent _block={_block} title={title} description={description} buttonLabel={buttonLabel} buttonHref={buttonHref} />
+          <CtaContent
+            _block={_block}
+            title={title}
+            description={description}
+            buttonLabel={buttonLabel}
+            buttonHref={buttonHref}
+            personName={personName}
+            personRole={personRole}
+            personPhoto={personPhoto}
+          />
           <PhotoMosaic galleryImages={galleryImages} featuredImage={featuredImage} className="h-[360px] w-full" />
         </div>
 
         {/* Desktop: photo → text */}
-        <div className="hidden items-center gap-[48px] md:flex">
-          <PhotoMosaic galleryImages={galleryImages} featuredImage={featuredImage} className="min-h-[480px] w-[55%] shrink-0" />
-          <CtaContent _block={_block} title={title} description={description} buttonLabel={buttonLabel} buttonHref={buttonHref} />
+        <div className="hidden items-center justify-center gap-[48px] md:flex">
+          <PhotoMosaic galleryImages={galleryImages} featuredImage={featuredImage} className="aspect-[440/446] w-[440px] shrink-0" />
+          <CtaContent
+            _block={_block}
+            title={title}
+            description={description}
+            buttonLabel={buttonLabel}
+            buttonHref={buttonHref}
+            personName={personName}
+            personRole={personRole}
+            personPhoto={personPhoto}
+          />
         </div>
       </div>
     </section>

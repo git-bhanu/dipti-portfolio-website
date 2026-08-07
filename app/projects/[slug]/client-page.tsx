@@ -92,7 +92,7 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
       <PageTransition>
       {/* Header */}
       <div className='px-5 pt-10 pb-6 md:px-[8vw] md:pt-16'>
-        <h1 className='text-h1 font-medium leading-none tracking-tight text-brand-white'>
+        <h1 className='text-h3 font-medium leading-none tracking-tight text-brand-white md:text-h2'>
           {extractText(project.title)}
         </h1>
         {project.subtitle && (
