@@ -36,7 +36,8 @@
       "width": "wide",
       "images": [
         {
-          "src": "/7.jpg"
+          "src": "/7.jpg",
+          "alt": "Brand identity system for Adyll featuring a bold wordmark, app icon, monogram logo, and minimalist black-and-white visual language."
         }
       ],
       "_template": "image"
@@ -58,10 +59,9 @@
     },
     {
       "width": "wide",
-      "orientation": "portrait",
       "images": [
         {
-          "src": "/Long-page-desktop-adyll-mockup.jpg"
+          "src": "/adyll_desktop.jpg"
         }
       ],
       "_template": "image"
@@ -71,6 +71,16 @@
       "images": [
         {
           "src": "/adyll_desktop2.jpg"
+        }
+      ],
+      "_template": "image"
+    },
+    {
+      "width": "wide",
+      "orientation": "portrait",
+      "images": [
+        {
+          "src": "/Long-page-desktop-adyll-mockup.jpg"
         }
       ],
       "_template": "image"
