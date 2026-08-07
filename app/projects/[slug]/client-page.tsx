@@ -178,7 +178,7 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
                   href={`/projects/${projectSlug(p)}`}
                   className='group block'
                 >
-                  <div className='relative aspect-[4/3] w-full overflow-hidden bg-white/10 mb-4'>
+                  <div className='relative aspect-[360/490] w-full overflow-hidden bg-white/10 mb-4'>
                     {thumb && (
                       <Image
                         src={thumb}
@@ -192,6 +192,9 @@ export default function ProjectDetailClientPage({ query, data, variables, slug, 
                   <h3 className='text-[20px] font-medium leading-tight text-brand-white'>
                     {title}
                   </h3>
+                  {p.subtitle && (
+                    <p className='mt-1 text-[16px] font-normal leading-[22.4px] tracking-[-0.64px] text-brand-muted'>{p.subtitle}</p>
+                  )}
                 </Link>
               );
             })}

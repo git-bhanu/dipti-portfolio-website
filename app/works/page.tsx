@@ -55,7 +55,7 @@ export default async function WorksPage() {
         <section className="py-[40px]">
           <div className="w-full px-5 md:px-[8vw]">
             <h1 className="text-[48px] font-medium text-brand-white">Works</h1>
-            <div className="mt-[32px] grid grid-cols-1 gap-[24px] md:grid-cols-2">
+            <div className="mt-[32px] grid grid-cols-1 gap-[24px] md:grid-cols-3">
               {projects.map((project: any) => {
                 const slug = (project._sys?.filename ?? '').toLowerCase();
                 const image = tinaImageUrl(project.cardImage ?? project.image);

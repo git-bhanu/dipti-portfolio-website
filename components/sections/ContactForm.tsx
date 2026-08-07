@@ -22,11 +22,10 @@ function Pill({ value, children }: { value: string; children: ReactNode }) {
   );
 }
 
-export default function ContactForm({ toEmail }: { toEmail: string }) {
+export default function ContactForm({ toEmail, onSubmitted }: { toEmail: string; onSubmitted: () => void }) {
   const [services, setServices] = useState<string[]>(['Brand Strategy']);
   const [budget, setBudget] = useState('₹4L–₹7L');
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -52,21 +51,12 @@ export default function ContactForm({ toEmail }: { toEmail: string }) {
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error('Request failed');
-      setSubmitted(true);
+      onSubmitted();
     } catch {
       setError(true);
     } finally {
       setSubmitting(false);
     }
-  }
-
-  if (submitted) {
-    return (
-      <div className="flex w-full max-w-[480px] flex-col gap-2 pt-[24px]">
-        <p className="text-h3 font-medium text-brand-white">Thank you.</p>
-        <p className="text-meta text-brand-muted">We&apos;ll be in touch shortly.</p>
-      </div>
-    );
   }
 
   return (
