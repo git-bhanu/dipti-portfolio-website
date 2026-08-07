@@ -14,7 +14,7 @@ export default function HeroSection({
   title,
   description,
   ctaLabel = "Start a Project",
-  ctaHref = "#contact",
+  ctaHref = "/contact",
 }: HeroSectionProps) {
   return (
     <section className="flex min-h-[60vh] flex-col items-center justify-center gap-6 px-5 py-[80px] md:gap-[64px] md:px-[8vw]">

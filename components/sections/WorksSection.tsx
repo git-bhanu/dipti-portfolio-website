@@ -41,7 +41,7 @@ export default function WorksSection({
       <div className="w-full px-5 md:px-[8vw]">
         <h2
           data-tina-field={_block ? tinaField(_block, "title") : undefined}
-          className="text-[48px] font-medium text-brand-white"
+          className="text-h3 font-medium text-brand-white"
         >
           {title}
         </h2>

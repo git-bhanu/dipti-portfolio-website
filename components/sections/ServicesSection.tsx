@@ -26,7 +26,7 @@ function ServiceCard({ item }: { item: ServiceItem }) {
 
   return (
     <div
-      className="relative aspect-[9/16] w-full overflow-hidden bg-brand-muted/20 md:flex-1"
+      className="relative aspect-[360/490] w-full overflow-hidden bg-brand-muted/20 md:flex-1"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -93,7 +93,7 @@ export default function ServicesSection({ _block, title, description, items }: S
         <div className="mb-[32px]">
           <h2
             data-tina-field={_block ? tinaField(_block, 'title') : undefined}
-            className="text-h2 font-medium text-brand-white"
+            className="text-h3 font-medium text-brand-white"
           >
             {title}
           </h2>

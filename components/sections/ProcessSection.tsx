@@ -28,7 +28,7 @@ export default function ProcessSection({ _block, title, description, imageUrl, i
             <div>
               <h2
                 data-tina-field={_block ? tinaField(_block, 'title') : undefined}
-                className="text-h2 font-medium text-brand-white"
+                className="text-h3 font-medium text-brand-white"
               >
                 {title}
               </h2>
@@ -44,16 +44,16 @@ export default function ProcessSection({ _block, title, description, imageUrl, i
 
             <div className="flex flex-col gap-[48px]">
               {items.map((item) => (
-                <div key={item.title} className="flex flex-row gap-[40px]">
+                <div key={item.title} className="flex flex-col gap-[8px] md:flex-row md:gap-[40px]">
                   <p
                     data-tina-field={item._raw ? tinaField(item._raw, 'title') : undefined}
-                    className="w-[160px] shrink-0 text-meta font-bold text-brand-white"
+                    className="text-meta font-bold text-brand-white md:w-[160px] md:shrink-0"
                   >
                     {item.title}
                   </p>
                   <p
                     data-tina-field={item._raw ? tinaField(item._raw, 'description') : undefined}
-                    className="max-w-[280px] text-meta text-brand-muted"
+                    className="text-meta text-brand-muted md:max-w-[280px]"
                   >
                     {item.description}
                   </p>

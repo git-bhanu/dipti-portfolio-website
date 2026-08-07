@@ -10,7 +10,7 @@ type FooterProps = {
   instagramHref: string;
 };
 
-export default function Footer({ email, instagramHref }: FooterProps) {
+export default function Footer({ brand, email, instagramHref }: FooterProps) {
   return (
     <footer className="border-t border-brand-muted/40 py-[40px]">
       <div className="w-full px-5 md:px-[8vw]">
@@ -26,7 +26,7 @@ export default function Footer({ email, instagramHref }: FooterProps) {
               Instagram
             </a>
           </div>
-          <span className="p-2 text-nav font-normal uppercase text-brand-white">©2026</span>
+          <span className="p-2 text-nav font-normal uppercase text-brand-white">©2026 {brand}</span>
         </div>
 
         {/* Desktop: links left, copyright right */}
@@ -39,7 +39,7 @@ export default function Footer({ email, instagramHref }: FooterProps) {
               Instagram
             </a>
           </div>
-          <span className="p-2 text-nav font-normal uppercase text-brand-white">©2026</span>
+          <span className="p-2 text-nav font-normal uppercase text-brand-white">©2026 {brand}</span>
         </div>
       </div>
     </footer>

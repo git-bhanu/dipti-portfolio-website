@@ -51,7 +51,7 @@ function CtaContent({
     <div className="flex flex-col items-start">
       <h2
         data-tina-field={_block ? tinaField(_block, 'title') : undefined}
-        className="text-h2 font-medium leading-tight text-brand-white"
+        className="text-h3 font-medium leading-tight text-brand-white"
       >
         {title}
       </h2>

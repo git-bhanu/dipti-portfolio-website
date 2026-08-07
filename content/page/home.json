@@ -12,7 +12,7 @@
     }
   ],
   "footer": {
-    "email": "serifsandsystems@gmail.com",
+    "email": "dipti@serifsandsystems.com",
     "instagramHref": "https://www.instagram.com/serifsandsystems/",
     "links": [
       {
@@ -30,7 +30,7 @@
       "title": "Brand Design & Websites with personality.",
       "description": "Built with strategy. Designed with personality.",
       "ctaLabel": "Start a Project",
-      "ctaHref": "mailto:serifsandsystems@gmail.com",
+      "ctaHref": "/contact",
       "_template": "hero"
     },
     {
@@ -102,7 +102,7 @@
       "title": "Ready to invest in perception?",
       "description": "We take limited projects each year.",
       "buttonLabel": "Start a Project",
-      "buttonHref": "mailto:serifsandsystems@gmail.com",
+      "buttonHref": "/contact",
       "galleryImages": [
         "/TCM1.jpg",
         "/Dog's-Story-wall3.jpg",
