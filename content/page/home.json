@@ -41,13 +41,13 @@
       "ctaHref": "/works",
       "items": [
         {
+          "project": "content/project/adyll.json"
+        },
+        {
           "project": "content/project/scuba-diving-website.json"
         },
         {
           "project": "content/project/a-dogs-story.json"
-        },
-        {
-          "project": "content/project/adyll.json"
         },
         {
           "project": "content/project/bluebot-group.json"
