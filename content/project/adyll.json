@@ -76,19 +76,19 @@
     },
     {
       "width": "wide",
+      "orientation": "portrait",
       "images": [
         {
-          "src": "/adyll_desktop2.jpg"
+          "src": "/Long-page-desktop-adyll-mockup.jpg"
         }
       ],
       "_template": "image"
     },
     {
       "width": "wide",
-      "orientation": "portrait",
       "images": [
         {
-          "src": "/Long-page-desktop-adyll-mockup.jpg"
+          "src": "/Brand Identity Portfolio (3).jpg"
         }
       ],
       "_template": "image"
