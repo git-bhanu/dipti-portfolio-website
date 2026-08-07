@@ -97,7 +97,7 @@ export default function ContactForm({ toEmail }: { toEmail: string }) {
         <ToggleGroup
           type="multiple"
           value={services}
-          onValueChange={(value) => value.length && setServices(value)}
+          onValueChange={(value: string[]) => value.length && setServices(value)}
           className="flex w-full flex-wrap justify-start gap-[8px]"
         >
           {SERVICES.map((service) => (
@@ -113,7 +113,7 @@ export default function ContactForm({ toEmail }: { toEmail: string }) {
         <ToggleGroup
           type="single"
           value={budget}
-          onValueChange={(value) => value && setBudget(value)}
+          onValueChange={(value: string) => value && setBudget(value)}
           className="flex w-full flex-wrap justify-start gap-[8px]"
         >
           {BUDGETS.map((b) => (
