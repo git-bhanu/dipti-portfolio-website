@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: 'Serifs and Systems',
   description:
     'Brand strategy and websites with personality.',
+  icons: {
+    icon: '/favicon.jpg',
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
