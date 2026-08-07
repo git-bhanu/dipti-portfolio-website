@@ -68,3 +68,53 @@ pnpm install
 pnpm build        # TinaCMS Cloud build + static export -> ./out
 npx serve out     # preview the static site locally
 ```
+
+## Contact form: D1 + Telegram
+
+The `/contact` page posts to `functions/api/contact.ts`, a Cloudflare Pages Function
+(auto-detected from the top-level `functions/` dir on deploy — no workflow change needed).
+It writes each submission to a D1 database and forwards it to a Telegram chat.
+
+### 1. Create the D1 database
+```bash
+npx wrangler d1 create dipti-contact-db
+```
+`wrangler.toml` is already wired to the live database (`dipti_contact_db` binding,
+`database_id = b7c58e34-dea8-4f3d-b23b-298e57ef95b2`).
+
+### 2. Run the migration against the remote database
+```bash
+npx wrangler d1 execute dipti_contact_db --remote --file=migrations/0001_create_submissions.sql
+```
+
+### 3. Bind D1 to the Pages project
+Cloudflare dashboard → your Pages project → **Settings → Functions → D1 database bindings**
+→ add binding `dipti_contact_db` → select `dipti-contact-db`. (Pages Functions read bindings
+from the dashboard config at runtime, not from `wrangler.toml`, for Direct Upload deploys.)
+
+### 4. Create a Telegram bot and get your chat ID
+- Message **@BotFather** on Telegram → `/newbot` → copy the bot token.
+- Message your new bot once (anything), then visit
+  `https://api.telegram.org/bot<TOKEN>/getUpdates` and read `message.chat.id` from the
+  response — that's your `TELEGRAM_CHAT_ID`.
+
+### 5. Add the secrets to the Pages project
+Dashboard → **Settings → Environment variables** (Production) → add:
+
+| Variable | Value |
+| --- | --- |
+| `TELEGRAM_BOT_TOKEN` | token from BotFather |
+| `TELEGRAM_CHAT_ID` | chat id from step 4 |
+
+Mark both **Encrypt**. Re-deploy (or trigger the Actions workflow) for the binding/secrets
+to take effect.
+
+### Local testing
+```bash
+cp .dev.vars.example .dev.vars   # fill in a test bot token/chat id, or leave blank to skip Telegram
+npx wrangler d1 execute dipti_contact_db --local --file=migrations/0001_create_submissions.sql
+pnpm pages:dev                    # builds + runs wrangler pages dev out
+```
+`wrangler pages dev` runs a local D1 (no Cloudflare account needed) and reads `.dev.vars`
+for the Telegram secrets. If `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID` are unset, the function
+still saves to D1 and just skips the Telegram call.
