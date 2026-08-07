@@ -59,14 +59,14 @@ function CtaContent({
     <div className="flex flex-col items-start">
       <h2
         data-tina-field={_block ? tinaField(_block, 'title') : undefined}
-        className="text-h3 font-medium leading-tight text-brand-white md:text-h2"
+        className="text-h3 font-medium leading-tight text-brand-white md:max-w-[520px] md:text-h2"
       >
         {title}
       </h2>
 
       <div data-tina-field={_block ? tinaField(_block, 'description') : undefined} className="mt-[20px] flex flex-col gap-[12px]">
         {paragraphs.map((paragraph, i) => (
-          <p key={i} className="text-meta text-brand-muted">
+          <p key={i} className="text-[20px] font-normal leading-[100%] tracking-[-0.6px] text-brand-muted">
             {paragraph}
           </p>
         ))}
@@ -79,12 +79,12 @@ function CtaContent({
               data-tina-field={_block ? tinaField(_block, 'personPhoto') : undefined}
               src={personPhoto}
               alt={personName ?? ''}
-              className="h-[48px] w-[48px] shrink-0 rounded-full object-cover"
+              className="h-[64px] w-[64px] shrink-0 rounded-full object-cover"
             />
           )}
           <div className="flex flex-col">
             {personName && (
-              <span data-tina-field={_block ? tinaField(_block, 'personName') : undefined} className="text-[13px] font-medium uppercase tracking-[-0.26px] text-brand-white">
+              <span data-tina-field={_block ? tinaField(_block, 'personName') : undefined} className="text-[13px] font-medium uppercase tracking-[-0.26px] text-brand-muted">
                 {personName}
               </span>
             )}
@@ -140,7 +140,7 @@ export default function CtaSection({
 
         {/* Desktop: photo → text */}
         <div className="hidden items-center justify-center gap-[48px] md:flex">
-          <PhotoMosaic galleryImages={galleryImages} featuredImage={featuredImage} className="aspect-[440/446] w-[440px] shrink-0" />
+          <PhotoMosaic galleryImages={galleryImages} featuredImage={featuredImage} className="aspect-[440/446] w-[560px] shrink-0" />
           <CtaContent
             _block={_block}
             title={title}
