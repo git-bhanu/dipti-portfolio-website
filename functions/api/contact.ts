@@ -69,15 +69,17 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       message ? `\n${escapeHtml(message)}` : '',
     ].join('\n');
 
-    try {
-      await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: env.TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' }),
-      });
-    } catch (err) {
-      console.error('Telegram notify failed', err);
-    }
+    const chatIds = env.TELEGRAM_CHAT_ID.split(',').map((id) => id.trim()).filter(Boolean);
+
+    await Promise.all(
+      chatIds.map((chatId) =>
+        fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' }),
+        }).catch((err) => console.error('Telegram notify failed', chatId, err))
+      )
+    );
   }
 
   return json({ ok: true });
