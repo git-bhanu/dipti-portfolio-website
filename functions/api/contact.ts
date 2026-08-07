@@ -1,11 +1,5 @@
-interface D1PreparedStatement {
-  bind(...values: unknown[]): D1PreparedStatement;
-  run(): Promise<unknown>;
-}
-
-interface D1Database {
-  prepare(query: string): D1PreparedStatement;
-}
+import type { D1Database } from '../_shared';
+import { escapeHtml } from '../_shared';
 
 interface Env {
   dipti_contact_db: D1Database;
@@ -27,10 +21,6 @@ type PagesFunction<E> = (context: { request: Request; env: E }) => Promise<Respo
 
 function json(data: unknown, status = 200) {
   return new Response(JSON.stringify(data), { status, headers: { 'Content-Type': 'application/json' } });
-}
-
-function escapeHtml(value: string) {
-  return value.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c] ?? c);
 }
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {

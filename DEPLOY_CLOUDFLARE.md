@@ -104,10 +104,27 @@ Dashboard → **Settings → Environment variables** (Production) → add:
 | Variable | Value |
 | --- | --- |
 | `TELEGRAM_BOT_TOKEN` | token from BotFather |
-| `TELEGRAM_CHAT_ID` | chat id from step 4 |
+| `TELEGRAM_CHAT_ID` | chat id from step 4 — comma-separate multiple ids to notify more than one person |
 
-Mark both **Encrypt**. Re-deploy (or trigger the Actions workflow) for the binding/secrets
-to take effect.
+Mark both **Encrypt**. No redeploy needed — Functions read secrets at request time.
+
+### 6. Bot commands: `/today` and `/csv`
+`functions/api/telegram-webhook.ts` handles inbound messages to the bot. Only chat ids
+listed in `TELEGRAM_CHAT_ID` get a response — anyone else is silently ignored.
+
+- `/today` — text digest of inquiries received today.
+- `/csv` — exports every submission as a `.csv` file.
+
+Wire it up once, after the site with this route is deployed:
+```bash
+curl "https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://<your-site>/api/telegram-webhook"
+```
+Optional but recommended — add a random `TELEGRAM_WEBHOOK_SECRET` secret (same dashboard
+step as above) and pass it as `secret_token` when registering the webhook, so only real
+Telegram requests reach the endpoint:
+```bash
+curl "https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://<your-site>/api/telegram-webhook&secret_token=<SAME_VALUE_AS_THE_SECRET>"
+```
 
 ### Local testing
 ```bash
