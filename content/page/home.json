@@ -35,28 +35,6 @@
       "_template": "hero"
     },
     {
-      "title": "Services",
-      "description": "Every service is designed to shape perception and create preference.",
-      "items": [
-        {
-          "title": "Brand Strategy",
-          "imageUrl": "/brand-strategy-consulting-service.jpg",
-          "description": "Positioning, messaging, and market clarity that shape every design decision."
-        },
-        {
-          "title": "Brand Identity Design",
-          "imageUrl": "/brand-identity-design-service (1).jpg",
-          "description": "A distinctive identity that reflects your brand and earns trust."
-        },
-        {
-          "title": "Website Design",
-          "imageUrl": "/website-design-service.jpg",
-          "description": "A digital presence that attracts better clients and reflects your true value."
-        }
-      ],
-      "_template": "services"
-    },
-    {
       "title": "Selected Works",
       "subtitle": "A curated look at recent brand and web projects.",
       "ctaLabel": "See all works",
@@ -77,6 +55,28 @@
         {}
       ],
       "_template": "works"
+    },
+    {
+      "title": "Services",
+      "description": "Every service is designed to shape perception and create preference.",
+      "items": [
+        {
+          "title": "Brand Strategy",
+          "imageUrl": "/brand-strategy-consulting-service.jpg",
+          "description": "Positioning, messaging, and market clarity that shape every design decision."
+        },
+        {
+          "title": "Brand Identity Design",
+          "imageUrl": "/brand-identity-design-service (1).jpg",
+          "description": "A distinctive identity that reflects your brand and earns trust."
+        },
+        {
+          "title": "Website Design",
+          "imageUrl": "/website-design-service.jpg",
+          "description": "A digital presence that attracts better clients and reflects your true value."
+        }
+      ],
+      "_template": "services"
     },
     {
       "title": "Our Process",
