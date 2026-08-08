@@ -35,30 +35,6 @@
       "_template": "hero"
     },
     {
-      "title": "Selected Works",
-      "subtitle": "A curated look at recent brand and web projects.",
-      "ctaLabel": "See all works",
-      "ctaHref": "/works",
-      "items": [
-        {
-          "project": "content/project/adyll.json"
-        },
-        {
-          "project": "content/project/scuba-diving-website.json"
-        },
-        {
-          "project": "content/project/a-dogs-story.json"
-        },
-        {
-          "project": "content/project/bluebot-group.json"
-        },
-        {
-          "project": ""
-        }
-      ],
-      "_template": "works"
-    },
-    {
       "title": "Services",
       "description": "Every service is designed to shape perception and create preference.",
       "items": [
@@ -79,6 +55,28 @@
         }
       ],
       "_template": "services"
+    },
+    {
+      "title": "Selected Works",
+      "subtitle": "A curated look at recent brand and web projects.",
+      "ctaLabel": "See all works",
+      "ctaHref": "/works",
+      "items": [
+        {
+          "project": "content/project/adyll.json"
+        },
+        {
+          "project": "content/project/scuba-diving-website.json"
+        },
+        {
+          "project": "content/project/a-dogs-story.json"
+        },
+        {
+          "project": "content/project/bluebot-group.json"
+        },
+        {}
+      ],
+      "_template": "works"
     },
     {
       "title": "Our Process",
@@ -109,7 +107,7 @@
       "description": "You don't need to have everything figured out.\nIf your business deserves a thoughtful brand, we'll find the right direction together.",
       "buttonLabel": "Book a Call",
       "buttonHref": "/contact",
-      "personName": "Dipti Singh",
+      "personName": "Dipti ",
       "personRole": "Brand Strategy • Identity • Websites",
       "personPhoto": "/dipti.jpg",
       "galleryImages": [
