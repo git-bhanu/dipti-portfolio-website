@@ -24,13 +24,14 @@ function Pill({ value, children }: { value: string; children: ReactNode }) {
 }
 
 export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; onSubmitted: () => void }) {
-  const [services, setServices] = useState<string[]>(['Brand Strategy']);
-  const [budget, setBudget] = useState('$5,000-$10,000');
-  const [connect, setConnect] = useState(CONNECT_OPTIONS[0]);
-  const [time, setTime] = useState(TIME_SLOTS[0]);
+  const [services, setServices] = useState<string[]>([]);
+  const [budget, setBudget] = useState('');
+  const [connect, setConnect] = useState('');
+  const [time, setTime] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
   const wantsCall = connect === CONNECT_OPTIONS[0];
+  const wantsEmail = connect === CONNECT_OPTIONS[1];
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -121,7 +122,7 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
         </ToggleGroup>
       </div>
 
-      {wantsCall ? (
+      {wantsCall && (
         <>
           <div className="w-full">
             <Label htmlFor="phone" className="sr-only">
@@ -145,7 +146,9 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
             </ToggleGroup>
           </div>
         </>
-      ) : (
+      )}
+
+      {wantsEmail && (
         <div className="w-full">
           <Label htmlFor="email" className="sr-only">
             Email
