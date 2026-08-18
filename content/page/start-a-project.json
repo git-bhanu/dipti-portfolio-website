@@ -35,19 +35,27 @@
       "title": "Work Gallery",
       "items": [
         {
-          "project": "content/project/scuba-diving-website.json",
+          "mediaType": "image",
+          "media": "/HP%20I.jpg",
+          "title": "Scuba Diving Website",
           "tag": "Brand Identity • Website • Presentation"
         },
         {
-          "project": "content/project/a-dogs-story.json",
+          "mediaType": "image",
+          "media": "/adyll_desktop.jpg",
+          "title": "Adyll",
           "tag": "Brand Identity • Website • Presentation"
         },
         {
-          "project": "content/project/adyll.json",
+          "mediaType": "image",
+          "media": "/bluebot-hero_phone.jpg",
+          "title": "Bluebot Group",
           "tag": "Brand Identity • Website • Presentation"
         },
         {
-          "project": "content/project/bluebot-group.json",
+          "mediaType": "image",
+          "media": "/ADS-Website.jpg",
+          "title": "A Dog's Story",
           "tag": "Brand Identity • Website • Presentation"
         }
       ],

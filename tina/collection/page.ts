@@ -61,15 +61,23 @@ const workGalleryBlock: Template = {
       type: 'object',
       list: true,
       ui: {
-        itemProps: (item) => ({ label: item?.project ?? 'Project' }),
+        itemProps: (item) => ({ label: item?.title || 'Gallery item' }),
       },
       fields: [
         {
-          name: 'project',
-          label: 'Project',
-          type: 'reference',
-          collections: ['project'],
+          name: 'mediaType',
+          label: 'Media Type',
+          type: 'string',
+          options: ['image', 'video'],
+          required: true,
         },
+        {
+          name: 'media',
+          label: 'Media (landscape, same file for mobile & desktop)',
+          type: 'image',
+          required: true,
+        },
+        { name: 'title', label: 'Label', type: 'string', required: true },
         { name: 'tag', label: 'Tag Line (e.g. Brand Identity • Website • Presentation)', type: 'string' },
       ],
     },

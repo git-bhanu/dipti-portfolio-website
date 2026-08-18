@@ -12,6 +12,7 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 const SERVICES = ['Brand Strategy', 'Brand Indentity', 'Packaging Design', 'Website Design'];
 const BUDGETS = ['$1,000-$2,500', '$2,500-$5,000', '$5,000-$10,000', '$10,000+', 'Not Sure'];
 const CONNECT_OPTIONS = ['Please call me to discuss my project', 'Email me'];
+const TIME_SLOTS = ['10:30-11:00 AM', '11:00-11:30 AM', '11:30 AM-12:00 PM', '12:00-12:30 PM', 'Not Sure'];
 
 function Pill({ value, children }: { value: string; children: ReactNode }) {
   return (
@@ -26,8 +27,10 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
   const [services, setServices] = useState<string[]>(['Brand Strategy']);
   const [budget, setBudget] = useState('$5,000-$10,000');
   const [connect, setConnect] = useState(CONNECT_OPTIONS[0]);
+  const [time, setTime] = useState(TIME_SLOTS[0]);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
+  const wantsCall = connect === CONNECT_OPTIONS[0];
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -35,14 +38,15 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
     setError(false);
 
     const formData = new FormData(e.currentTarget);
+    const message = (formData.get('message') as string) ?? '';
     const payload = {
       name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
+      email: wantsCall ? '' : formData.get('email'),
+      phone: wantsCall ? formData.get('phone') : '',
       services,
       budget,
-      message: formData.get('message'),
-      callMe: connect === CONNECT_OPTIONS[0],
+      message: wantsCall && time ? `Preferred time to call: ${time}\n\n${message}` : message,
+      callMe: wantsCall,
     };
 
     try {
@@ -67,20 +71,6 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
           Name
         </Label>
         <Input id="name" name="name" placeholder="Name*" required />
-      </div>
-
-      <div className="w-full">
-        <Label htmlFor="email" className="sr-only">
-          Email
-        </Label>
-        <Input id="email" name="email" type="email" placeholder="Email*" required />
-      </div>
-
-      <div className="w-full">
-        <Label htmlFor="phone" className="sr-only">
-          Phone
-        </Label>
-        <Input id="phone" name="phone" type="tel" placeholder="Phone*" required />
       </div>
 
       <div className="flex w-full flex-col items-start gap-[8px] pt-[8px]">
@@ -131,6 +121,39 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
         </ToggleGroup>
       </div>
 
+      {wantsCall ? (
+        <>
+          <div className="w-full">
+            <Label htmlFor="phone" className="sr-only">
+              Phone
+            </Label>
+            <Input id="phone" name="phone" type="tel" placeholder="Phone*" required />
+          </div>
+          <div className="flex w-full flex-col items-start gap-[8px] pt-[8px]">
+            <Label className="leading-[32px]">Preferred time to reach you · Mon–Fri (CT)</Label>
+            <ToggleGroup
+              type="single"
+              value={time}
+              onValueChange={(value: string) => value && setTime(value)}
+              className="flex w-full flex-wrap justify-start gap-[8px]"
+            >
+              {TIME_SLOTS.map((slot) => (
+                <Pill key={slot} value={slot}>
+                  {slot}
+                </Pill>
+              ))}
+            </ToggleGroup>
+          </div>
+        </>
+      ) : (
+        <div className="w-full">
+          <Label htmlFor="email" className="sr-only">
+            Email
+          </Label>
+          <Input id="email" name="email" type="email" placeholder="Email*" required />
+        </div>
+      )}
+
       <div className="w-full">
         <Label htmlFor="message" className="sr-only">
           Message
@@ -141,6 +164,8 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
       <Button type="submit" disabled={submitting}>
         {submitting ? 'Submitting…' : 'Submit Project Brief'}
       </Button>
+
+      <p className="text-[12px] text-brand-muted">A remote-first studio working with brands worldwide.</p>
 
       {error && (
         <p className="text-[12px] text-brand-muted">

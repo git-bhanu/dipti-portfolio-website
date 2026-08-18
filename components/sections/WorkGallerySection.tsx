@@ -1,17 +1,14 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import { tinaField } from 'tinacms/dist/react';
 
 type GalleryItem = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   _raw?: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  title: any;
-  slug: string;
-  image: string;
-  imageAlt: string;
+  mediaType: 'image' | 'video';
+  media: string;
+  title: string;
   tag?: string;
 };
 
@@ -21,16 +18,6 @@ type WorkGallerySectionProps = {
   title: string;
   items: GalleryItem[];
 };
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function extractText(content: any): string {
-  if (!content) return '';
-  if (typeof content === 'string') return content.replace(/\n$/, '');
-  if (Array.isArray(content)) return content.map(extractText).join('');
-  if (content.text) return content.text;
-  if (content.children) return extractText(content.children);
-  return '';
-}
 
 export default function WorkGallerySection({ _block, title, items }: WorkGallerySectionProps) {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -82,20 +69,26 @@ export default function WorkGallerySection({ _block, title, items }: WorkGallery
           className="flex snap-x snap-mandatory gap-[16px] overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {items.map((item, i) => (
-            <Link
-              key={i}
-              href={`/projects/${item.slug}`}
-              className="group block w-[85%] shrink-0 snap-start sm:w-[45%] lg:w-[calc((100%-32px)/3)]"
-            >
-              <div className="aspect-square overflow-hidden bg-white/10">
-                <img
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  src={item.image}
-                  alt={item.imageAlt}
-                />
+            <div key={i} className="block w-[95%] shrink-0 snap-start sm:w-[45%] lg:w-[calc((100%-32px)/3)]">
+              <div
+                data-tina-field={item._raw ? tinaField(item._raw, 'media') : undefined}
+                className="aspect-[340/240] overflow-hidden bg-white/10"
+              >
+                {item.mediaType === 'video' ? (
+                  <video
+                    className="h-full w-full object-cover"
+                    src={item.media}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                ) : (
+                  <img className="h-full w-full object-cover" src={item.media} alt={item.title} />
+                )}
               </div>
               <p className="mt-3 text-[14px] font-medium uppercase tracking-[-0.42px] text-brand-white">
-                {extractText(item.title)}
+                {item.title}
               </p>
               {item.tag && (
                 <p
@@ -105,7 +98,7 @@ export default function WorkGallerySection({ _block, title, items }: WorkGallery
                   {item.tag}
                 </p>
               )}
-            </Link>
+            </div>
           ))}
         </div>
 

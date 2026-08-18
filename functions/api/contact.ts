@@ -31,8 +31,8 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     return json({ error: 'Invalid JSON' }, 400);
   }
 
-  const { name, email, phone, services = [], budget = '', message = '', callMe = false } = payload;
-  if (!name || !email || !phone) {
+  const { name, email = '', phone = '', services = [], budget = '', message = '', callMe = false } = payload;
+  if (!name || (callMe ? !phone : !email)) {
     return json({ error: 'Missing required fields' }, 400);
   }
 

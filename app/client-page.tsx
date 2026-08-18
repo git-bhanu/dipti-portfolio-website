@@ -84,16 +84,13 @@ export default function ClientPage(props: ClientPageProps) {
                 key={i}
                 _block={block}
                 title={block.title}
-                items={(block.items ?? [])
-                  .filter((item: any) => item?.project?.__typename === 'Project')
-                  .map((item: any) => ({
-                    _raw: item,
-                    title: item.project.title,
-                    slug: item.project._sys?.filename ?? '',
-                    image: tinaImageUrl(item.project.cardImage ?? item.project.image),
-                    imageAlt: item.project.imageAlt ?? '',
-                    tag: item.tag ?? '',
-                  }))}
+                items={(block.items ?? []).map((item: any) => ({
+                  _raw: item,
+                  mediaType: item.mediaType === 'video' ? 'video' : 'image',
+                  media: tinaImageUrl(item.media),
+                  title: item.title,
+                  tag: item.tag ?? '',
+                }))}
               />
             );
 
