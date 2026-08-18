@@ -1,0 +1,156 @@
+'use client';
+
+import { useState, type FormEvent, type ReactNode } from 'react';
+import { Check } from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+
+const SERVICES = ['Brand Strategy', 'Brand Indentity', 'Packaging Design', 'Website Design'];
+const BUDGETS = ['$1,000-$2,500', '$2,500-$5,000', '$5,000-$10,000', '$10,000+', 'Not Sure'];
+const CONNECT_OPTIONS = ['Please call me to discuss my project', 'Email me'];
+
+function Pill({ value, children }: { value: string; children: ReactNode }) {
+  return (
+    <ToggleGroupItem value={value} className="group">
+      <Check className="hidden size-3 group-data-[state=on]:inline" strokeWidth={3} />
+      {children}
+    </ToggleGroupItem>
+  );
+}
+
+export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; onSubmitted: () => void }) {
+  const [services, setServices] = useState<string[]>(['Brand Strategy']);
+  const [budget, setBudget] = useState('$5,000-$10,000');
+  const [connect, setConnect] = useState(CONNECT_OPTIONS[0]);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSubmitting(true);
+    setError(false);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      services,
+      budget,
+      message: formData.get('message'),
+      callMe: connect === CONNECT_OPTIONS[0],
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error('Request failed');
+      onSubmitted();
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex w-full max-w-[480px] flex-col items-start gap-[20px]">
+      <div className="w-full">
+        <Label htmlFor="name" className="sr-only">
+          Name
+        </Label>
+        <Input id="name" name="name" placeholder="Name*" required />
+      </div>
+
+      <div className="w-full">
+        <Label htmlFor="email" className="sr-only">
+          Email
+        </Label>
+        <Input id="email" name="email" type="email" placeholder="Email*" required />
+      </div>
+
+      <div className="w-full">
+        <Label htmlFor="phone" className="sr-only">
+          Phone
+        </Label>
+        <Input id="phone" name="phone" type="tel" placeholder="Phone*" required />
+      </div>
+
+      <div className="flex w-full flex-col items-start gap-[8px] pt-[8px]">
+        <Label className="leading-[32px]">What services are you looking for?</Label>
+        <ToggleGroup
+          type="multiple"
+          value={services}
+          onValueChange={(value: string[]) => value.length && setServices(value)}
+          className="flex w-full flex-wrap justify-start gap-[8px]"
+        >
+          {SERVICES.map((service) => (
+            <Pill key={service} value={service}>
+              {service}
+            </Pill>
+          ))}
+        </ToggleGroup>
+      </div>
+
+      <div className="flex w-full flex-col items-start gap-[8px] pt-[8px]">
+        <Label className="leading-[32px]">Project investment</Label>
+        <ToggleGroup
+          type="single"
+          value={budget}
+          onValueChange={(value: string) => value && setBudget(value)}
+          className="flex w-full flex-wrap justify-start gap-[8px]"
+        >
+          {BUDGETS.map((b) => (
+            <Pill key={b} value={b}>
+              {b}
+            </Pill>
+          ))}
+        </ToggleGroup>
+      </div>
+
+      <div className="flex w-full flex-col items-start gap-[8px] pt-[8px]">
+        <Label className="leading-[32px]">How would you like to connect?</Label>
+        <ToggleGroup
+          type="single"
+          value={connect}
+          onValueChange={(value: string) => value && setConnect(value)}
+          className="flex w-full flex-wrap justify-start gap-[8px]"
+        >
+          {CONNECT_OPTIONS.map((option) => (
+            <Pill key={option} value={option}>
+              {option}
+            </Pill>
+          ))}
+        </ToggleGroup>
+      </div>
+
+      <div className="w-full">
+        <Label htmlFor="message" className="sr-only">
+          Message
+        </Label>
+        <Textarea id="message" name="message" placeholder="Tell us about your project." />
+      </div>
+
+      <Button type="submit" disabled={submitting}>
+        {submitting ? 'Submitting…' : 'Submit Project Brief'}
+      </Button>
+
+      {error && (
+        <p className="text-[12px] text-brand-muted">
+          Something went wrong. Try again, or email us directly at{' '}
+          <a href={`mailto:${toEmail}`} className="underline text-brand-white">
+            {toEmail}
+          </a>
+          .
+        </p>
+      )}
+    </form>
+  );
+}

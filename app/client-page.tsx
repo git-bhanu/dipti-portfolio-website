@@ -4,9 +4,12 @@ import { useTina } from 'tinacms/dist/react';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import HeroSection from '@/components/sections/HeroSection';
+import BriefFormSection from '@/components/sections/BriefFormSection';
 import WorksSection from '@/components/sections/WorksSection';
+import WorkGallerySection from '@/components/sections/WorkGallerySection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ProcessSection from '@/components/sections/ProcessSection';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import CtaSection from '@/components/sections/CtaSection';
 import { tinaImageUrl } from '@/lib/tina-image';
 import PageTransition from '@/components/shared/PageTransition';
@@ -41,6 +44,17 @@ export default function ClientPage(props: ClientPageProps) {
               />
             );
 
+          case 'SitePageBlocksBriefForm':
+            return (
+              <BriefFormSection
+                key={i}
+                _block={block}
+                title={block.title}
+                description={block.description ?? ''}
+                toEmail={page.footer?.email ?? ''}
+              />
+            );
+
           case 'SitePageBlocksWorks':
             return (
               <WorksSection
@@ -61,6 +75,25 @@ export default function ClientPage(props: ClientPageProps) {
                 kicker=""
                 ctaLabel={block.ctaLabel ?? ''}
                 ctaHref={block.ctaHref ?? ''}
+              />
+            );
+
+          case 'SitePageBlocksWorkGallery':
+            return (
+              <WorkGallerySection
+                key={i}
+                _block={block}
+                title={block.title}
+                items={(block.items ?? [])
+                  .filter((item: any) => item?.project?.__typename === 'Project')
+                  .map((item: any) => ({
+                    _raw: item,
+                    title: item.project.title,
+                    slug: item.project._sys?.filename ?? '',
+                    image: tinaImageUrl(item.project.cardImage ?? item.project.image),
+                    imageAlt: item.project.imageAlt ?? '',
+                    tag: item.tag ?? '',
+                  }))}
               />
             );
 
@@ -91,6 +124,22 @@ export default function ClientPage(props: ClientPageProps) {
                 imageUrl={tinaImageUrl(block.imageUrl)}
                 items={(block.items ?? []).map((item: any) => ({ ...item, _raw: item }))}
                 kicker=""
+              />
+            );
+
+          case 'SitePageBlocksTestimonials':
+            return (
+              <TestimonialsSection
+                key={i}
+                _block={block}
+                title={block.title}
+                items={(block.items ?? []).map((t: any) => ({
+                  _raw: t,
+                  image: tinaImageUrl(t.image),
+                  quote: t.quote,
+                  name: t.name,
+                  role: t.role ?? '',
+                }))}
               />
             );
 

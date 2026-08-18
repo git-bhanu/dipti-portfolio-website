@@ -1,0 +1,137 @@
+{
+  "brand": "Serifs & Systems",
+  "seoTitle": "Start a Project: Serifs and Systems",
+  "navigation": [
+    {
+      "label": "Works",
+      "href": "/works"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "footer": {
+    "email": "dipti@serifsandsystems.com",
+    "instagramHref": "https://www.instagram.com/serifsandsystems/",
+    "links": [
+      {
+        "label": "Works",
+        "href": "/#works"
+      },
+      {
+        "label": "Contact",
+        "href": "/#contact"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "title": "Got a project in mind? Let's build it properly.",
+      "description": "Let's create a brand that's clear, distinctive, and built to last.",
+      "_template": "briefForm"
+    },
+    {
+      "title": "Work Gallery",
+      "items": [
+        {
+          "project": "content/project/scuba-diving-website.json",
+          "tag": "Brand Identity • Website • Presentation"
+        },
+        {
+          "project": "content/project/a-dogs-story.json",
+          "tag": "Brand Identity • Website • Presentation"
+        },
+        {
+          "project": "content/project/adyll.json",
+          "tag": "Brand Identity • Website • Presentation"
+        },
+        {
+          "project": "content/project/bluebot-group.json",
+          "tag": "Brand Identity • Website • Presentation"
+        }
+      ],
+      "_template": "workGallery"
+    },
+    {
+      "title": "Services",
+      "description": "Each service is designed to strengthen how the market perceives you and positions you as the premium choice.",
+      "items": [
+        {
+          "title": "Brand Strategy",
+          "imageUrl": "/brand-strategy-consulting-service.jpg",
+          "description": "Positioning, messaging, and market clarity that shape every design decision."
+        },
+        {
+          "title": "Brand Identity Design",
+          "imageUrl": "/brand-identity-design-service (1).jpg",
+          "description": "A distinctive identity that reflects your brand and earns trust."
+        },
+        {
+          "title": "Website Design",
+          "imageUrl": "/website-design-service.jpg",
+          "description": "A digital presence that attracts better clients and reflects your true value."
+        }
+      ],
+      "_template": "services"
+    },
+    {
+      "title": "Our Process",
+      "description": "Built to influence perception and create preference.",
+      "imageUrl": "/design-process-brand-design-agency (1).jpg",
+      "items": [
+        {
+          "title": "Discovery & Insights",
+          "description": "Understanding your business, audience, and market."
+        },
+        {
+          "title": "Strategy",
+          "description": "Defining positioning, messaging, and direction."
+        },
+        {
+          "title": "Design",
+          "description": "Translating strategy into clear, cohesive systems."
+        },
+        {
+          "title": "Launch",
+          "description": "Supporting implementation and future growth."
+        }
+      ],
+      "_template": "process"
+    },
+    {
+      "title": "Testimonials",
+      "items": [
+        {
+          "image": "/Desktop_bluebot.jpg",
+          "quote": "Working with Serifs & Systems was a fantastic experience. They turned our vision into reality and transformed our brand into something beautiful, functional, and true to who we are. We couldn't be happier with the results!",
+          "name": "Sandeep",
+          "role": "Founder • Adyll • Marketing"
+        },
+        {
+          "image": "/Mobile%20UI%20Sample%201.jpg",
+          "quote": "Working with Serifs & Systems was a fantastic experience. They turned our vision into reality and transformed our product into something beautiful, functional, and inviting. We couldn't be happier with the results!",
+          "name": "Rashan",
+          "role": "Co-Founder • Bluebot • Digital Product"
+        }
+      ],
+      "_template": "testimonials"
+    },
+    {
+      "title": "Let's build a brand with personality.",
+      "description": "You don't need to have everything figured out.\nIf your business deserves a thoughtful brand, we'll find the right direction together.",
+      "buttonLabel": "Book a Call",
+      "buttonHref": "/contact",
+      "personName": "Dipti Singh",
+      "personRole": "Brand Strategy • Identity • Websites",
+      "personPhoto": "/dipti.jpg",
+      "galleryImages": [
+        "/TCM1.jpg",
+        "/Dog's-Story-wall3.jpg",
+        "/Bluebot%20post%2023.jpg"
+      ],
+      "featuredImage": "/ChatGPT%20Image%20Jul%202,%202026,%2001_46_09%20AM.png",
+      "_template": "cta"
+    }
+  ]
+}

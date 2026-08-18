@@ -50,6 +50,32 @@ const worksBlock: Template = {
   ],
 };
 
+const workGalleryBlock: Template = {
+  name: 'workGallery',
+  label: 'Work Gallery (Carousel)',
+  fields: [
+    { name: 'title', label: 'Section Title', type: 'string', required: true },
+    {
+      name: 'items',
+      label: 'Gallery Items',
+      type: 'object',
+      list: true,
+      ui: {
+        itemProps: (item) => ({ label: item?.project ?? 'Project' }),
+      },
+      fields: [
+        {
+          name: 'project',
+          label: 'Project',
+          type: 'reference',
+          collections: ['project'],
+        },
+        { name: 'tag', label: 'Tag Line (e.g. Brand Identity • Website • Presentation)', type: 'string' },
+      ],
+    },
+  ],
+};
+
 const servicesBlock: Template = {
   name: 'services',
   label: 'Services',
@@ -142,6 +168,55 @@ const ctaBlock: Template = {
   ],
 };
 
+const briefFormBlock: Template = {
+  name: 'briefForm',
+  label: 'Project Brief Form',
+  fields: [
+    {
+      name: 'title',
+      label: 'Title',
+      type: 'string',
+      required: true,
+      ui: { component: 'textarea' },
+    },
+    {
+      name: 'description',
+      label: 'Description',
+      type: 'string',
+      ui: { component: 'textarea' },
+    },
+  ],
+};
+
+const testimonialsBlock: Template = {
+  name: 'testimonials',
+  label: 'Testimonials',
+  fields: [
+    { name: 'title', label: 'Section Title', type: 'string', required: true },
+    {
+      name: 'items',
+      label: 'Testimonials',
+      type: 'object',
+      list: true,
+      ui: {
+        itemProps: (item) => ({ label: item?.name || 'Testimonial' }),
+      },
+      fields: [
+        { name: 'image', label: 'Image', type: 'image', required: true },
+        {
+          name: 'quote',
+          label: 'Quote',
+          type: 'string',
+          required: true,
+          ui: { component: 'textarea' },
+        },
+        { name: 'name', label: 'Name', type: 'string', required: true },
+        { name: 'role', label: 'Role', type: 'string' },
+      ],
+    },
+  ],
+};
+
 const linkFields = [
   { name: 'label', label: 'Label', type: 'string' as const, required: true as const },
   { name: 'href', label: 'Href', type: 'string' as const, required: true as const },
@@ -196,7 +271,7 @@ export const PageCollection: Collection = {
       type: 'object',
       list: true,
       ui: { visualSelector: true },
-      templates: [heroBlock, worksBlock, servicesBlock, processBlock, ctaBlock],
+      templates: [heroBlock, briefFormBlock, worksBlock, workGalleryBlock, servicesBlock, processBlock, testimonialsBlock, ctaBlock],
     },
   ],
 };
