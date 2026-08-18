@@ -33,30 +33,47 @@
     },
     {
       "title": "Work Gallery",
+      "subtitle": "A glimpse into brand worlds I built for other founders and businesses.",
       "items": [
         {
           "mediaType": "image",
-          "media": "/HP%20I.jpg",
-          "title": "Scuba Diving Website",
-          "tag": "Brand Identity • Website • Presentation"
+          "media": "/Scuba-dives-2.jpg",
+          "title": "Scuba Diving Website"
         },
         {
           "mediaType": "image",
-          "media": "/adyll_desktop.jpg",
-          "title": "Adyll",
-          "tag": "Brand Identity • Website • Presentation"
+          "media": "/Adyll_Home.jpg",
+          "title": "Adyll"
         },
         {
           "mediaType": "image",
-          "media": "/bluebot-hero_phone.jpg",
-          "title": "Bluebot Group",
-          "tag": "Brand Identity • Website • Presentation"
+          "media": "/adyll-wall3.jpg",
+          "title": "Adyll"
         },
         {
           "mediaType": "image",
-          "media": "/ADS-Website.jpg",
-          "title": "A Dog's Story",
-          "tag": "Brand Identity • Website • Presentation"
+          "media": "/Dog's-Story-wall3.jpg",
+          "title": "A Dog's Story"
+        },
+        {
+          "mediaType": "image",
+          "media": "/Mobile%20UI%20Sample%201.jpg",
+          "title": "A Dog's Story"
+        },
+        {
+          "mediaType": "image",
+          "media": "/bb-2.jpg",
+          "title": "Bluebot Group"
+        },
+        {
+          "mediaType": "image",
+          "media": "/bb-3.jpg",
+          "title": "Bluebot Group"
+        },
+        {
+          "mediaType": "image",
+          "media": "/bluebot_display.jpg",
+          "title": "Bluebot Group"
         }
       ],
       "_template": "workGallery"

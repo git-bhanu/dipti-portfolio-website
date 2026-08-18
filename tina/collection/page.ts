@@ -55,6 +55,7 @@ const workGalleryBlock: Template = {
   label: 'Work Gallery (Carousel)',
   fields: [
     { name: 'title', label: 'Section Title', type: 'string', required: true },
+    { name: 'subtitle', label: 'Section Subtitle', type: 'string', ui: { component: 'textarea' } },
     {
       name: 'items',
       label: 'Gallery Items',
@@ -73,12 +74,11 @@ const workGalleryBlock: Template = {
         },
         {
           name: 'media',
-          label: 'Media (landscape, same file for mobile & desktop)',
+          label: 'Media (tall portrait, same file for mobile & desktop)',
           type: 'image',
           required: true,
         },
-        { name: 'title', label: 'Label', type: 'string', required: true },
-        { name: 'tag', label: 'Tag Line (e.g. Brand Identity • Website • Presentation)', type: 'string' },
+        { name: 'title', label: 'Label (used for alt text, not shown on page)', type: 'string', required: true },
       ],
     },
   ],

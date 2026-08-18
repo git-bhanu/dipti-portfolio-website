@@ -84,12 +84,12 @@ export default function ClientPage(props: ClientPageProps) {
                 key={i}
                 _block={block}
                 title={block.title}
+                subtitle={block.subtitle ?? ''}
                 items={(block.items ?? []).map((item: any) => ({
                   _raw: item,
                   mediaType: item.mediaType === 'video' ? 'video' : 'image',
                   media: tinaImageUrl(item.media),
                   title: item.title,
-                  tag: item.tag ?? '',
                 }))}
               />
             );
