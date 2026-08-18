@@ -2,7 +2,7 @@
   "slug": "Adyll",
   "title": "Adyll\n",
   "sortOrder": 3,
-  "image": "/adyll_desktop.jpg",
+  "image": "/6.jpg",
   "imageAlt": "Adyll brand and website design",
   "cardImage": "/Adyll_Home.jpg",
   "subtitle": "From forgettable to sharp, minimal, and intentional. ",
@@ -10,7 +10,7 @@
   "blocks": [
     {
       "level": "h2",
-      "heading": "Project Information\n",
+      "heading": "",
       "_template": "header"
     },
     {
@@ -24,13 +24,31 @@
           "value": "Adyll\n"
         },
         {
-          "label": "Location",
-          "value": "Delhi, India\n"
+          "label": "Industry",
+          "value": "Marketing\n"
+        },
+        {
+          "label": "Challenge",
+          "value": "Outdated visual identity\n\nInconsistent digital presence\n\nNeeded a brand that inspires trust\n"
+        },
+        {
+          "label": "The Approach",
+          "value": "Clean, minimal identity\n\nCohesive visual system\n\nApplied it across key touchpoints\n"
         }
       ],
-      "infoText": "Adyll was designed to create an experience that feels desirable from the very first interaction. The project focused on crafting a distinctive visual identity and digital experience that reflected the brand's personality while making every touchpoint feel effortless, memorable, and ultimately encouraging users to book with confidence.\n",
+      "infoText": "Adyll was designed to create an experience that feels desirable from the very first interaction. The project focused on crafting a distinctive visual identity and digital experience that reflected the brand's personality while making every touchpoint feel effortless, memorable, and ultimately encouraging users to book with confidence.\n\n",
       "liveSiteUrl": "https://adyll.com/",
       "_template": "projectInfo"
+    },
+    {
+      "width": "wide",
+      "images": [
+        {
+          "src": "/7.jpg",
+          "alt": "Adyll brand applications including business cards, stationery, environmental graphics, and a minimalist typography-led poster system."
+        }
+      ],
+      "_template": "image"
     },
     {
       "width": "wide",
@@ -49,6 +67,15 @@
     },
     {
       "width": "wide",
+      "images": [
+        {
+          "src": "/adyll_desktop.jpg"
+        }
+      ],
+      "_template": "image"
+    },
+    {
+      "width": "wide",
       "orientation": "portrait",
       "images": [
         {
@@ -61,7 +88,16 @@
       "width": "wide",
       "images": [
         {
-          "src": "/adyll_desktop2.jpg"
+          "src": "/Brand Identity Portfolio (3).jpg"
+        }
+      ],
+      "_template": "image"
+    },
+    {
+      "width": "wide",
+      "images": [
+        {
+          "src": "/Brand Identity Portfolio (2).jpg"
         }
       ],
       "_template": "image"
