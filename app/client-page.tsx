@@ -90,6 +90,7 @@ export default function ClientPage({ showHeader = true, ...props }: ClientPagePr
                   _raw: item,
                   mediaType: item.mediaType === 'video' ? 'video' : 'image',
                   media: tinaImageUrl(item.media),
+                  mobileMedia: item.mobileMedia ? tinaImageUrl(item.mobileMedia) : tinaImageUrl(item.media),
                   title: item.title,
                 }))}
               />

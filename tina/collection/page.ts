@@ -74,9 +74,14 @@ const workGalleryBlock: Template = {
         },
         {
           name: 'media',
-          label: 'Media (tall portrait, same file for mobile & desktop)',
+          label: 'Desktop Media (wide)',
           type: 'image',
           required: true,
+        },
+        {
+          name: 'mobileMedia',
+          label: 'Mobile Media (portrait, optional — falls back to Desktop Media)',
+          type: 'image',
         },
         { name: 'title', label: 'Label (used for alt text, not shown on page)', type: 'string', required: true },
       ],

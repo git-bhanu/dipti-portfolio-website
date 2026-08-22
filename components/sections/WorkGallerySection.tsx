@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { tinaField } from 'tinacms/dist/react';
 
 type GalleryItem = {
@@ -8,6 +9,7 @@ type GalleryItem = {
   _raw?: any;
   mediaType: 'image' | 'video';
   media: string;
+  mobileMedia: string;
   title: string;
 };
 
@@ -19,10 +21,20 @@ type WorkGallerySectionProps = {
   items: GalleryItem[];
 };
 
+const AUTO_ADVANCE_MS = 2600;
+
 export default function WorkGallerySection({ _block, title, subtitle, items }: WorkGallerySectionProps) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(false);
   const [active, setActive] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // active-dot tracking on scroll
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -45,6 +57,66 @@ export default function WorkGallerySection({ _block, title, subtitle, items }: W
     };
   }, [items.length]);
 
+  // auto-advance to next card, pauses on interaction / lightbox open
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track || items.length < 2) return;
+
+    const id = setInterval(() => {
+      if (!track || pausedRef.current) return;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (maxScroll <= 0) return;
+
+      let nearest = 0;
+      let nearestDist = Infinity;
+      Array.from(track.children).forEach((child, i) => {
+        if (!(child instanceof HTMLElement)) return;
+        const dist = Math.abs(child.offsetLeft - track.scrollLeft);
+        if (dist < nearestDist) {
+          nearestDist = dist;
+          nearest = i;
+        }
+      });
+
+      const nextIndex = nearest + 1 >= items.length ? 0 : nearest + 1;
+      const nextCard = track.children[nextIndex];
+      if (nextCard instanceof HTMLElement) {
+        track.scrollTo({
+          left: nextIndex === 0 ? 0 : nextCard.offsetLeft,
+          behavior: 'smooth',
+        });
+      }
+    }, AUTO_ADVANCE_MS);
+
+    return () => clearInterval(id);
+  }, [items.length]);
+
+  useEffect(() => {
+    pausedRef.current = openIndex !== null;
+  }, [openIndex]);
+
+  useEffect(() => {
+    if (openIndex === null) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpenIndex(null);
+    }
+    document.addEventListener('keydown', onKeyDown);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [openIndex]);
+
+  function pause() {
+    pausedRef.current = true;
+  }
+
+  function resume() {
+    if (openIndex === null) pausedRef.current = false;
+  }
+
   function goTo(i: number) {
     const track = trackRef.current;
     if (!track) return;
@@ -53,6 +125,8 @@ export default function WorkGallerySection({ _block, title, subtitle, items }: W
       track.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
     }
   }
+
+  const openItem = openIndex !== null ? items[openIndex] : null;
 
   return (
     <section className="py-[40px]" id="work-gallery">
@@ -75,13 +149,23 @@ export default function WorkGallerySection({ _block, title, subtitle, items }: W
 
         <div
           ref={trackRef}
+          onPointerEnter={pause}
+          onPointerLeave={resume}
+          onTouchStart={pause}
+          onTouchEnd={resume}
           className="flex snap-x snap-mandatory gap-[16px] overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {items.map((item, i) => (
-            <div key={i} className="block w-full shrink-0 snap-start lg:w-[calc((100%-32px)/3)]">
+            <button
+              key={i}
+              type="button"
+              aria-label={`Expand ${item.title}`}
+              onClick={() => setOpenIndex(i)}
+              className="block w-[85%] shrink-0 snap-start text-left sm:w-[60%] lg:w-[calc((100%-32px)/3)]"
+            >
               <div
                 data-tina-field={item._raw ? tinaField(item._raw, 'media') : undefined}
-                className="aspect-[340/468.87] overflow-hidden bg-white/10"
+                className="aspect-[3/4] cursor-pointer overflow-hidden bg-white/10 lg:aspect-[16/10]"
               >
                 {item.mediaType === 'video' ? (
                   <video
@@ -93,10 +177,21 @@ export default function WorkGallerySection({ _block, title, subtitle, items }: W
                     playsInline
                   />
                 ) : (
-                  <img className="h-full w-full object-cover" src={item.media} alt={item.title} />
+                  <>
+                    <img
+                      className="block h-full w-full object-cover lg:hidden"
+                      src={item.mobileMedia}
+                      alt={item.title}
+                    />
+                    <img
+                      className="hidden h-full w-full object-cover lg:block"
+                      src={item.media}
+                      alt={item.title}
+                    />
+                  </>
                 )}
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
@@ -115,6 +210,49 @@ export default function WorkGallerySection({ _block, title, subtitle, items }: W
           </div>
         )}
       </div>
+
+      {mounted && openItem && createPortal(
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={() => setOpenIndex(null)}
+        >
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={() => setOpenIndex(null)}
+            className="absolute right-5 top-5 text-3xl leading-none text-brand-white/80 hover:text-brand-white"
+          >
+            &times;
+          </button>
+          {openItem.mediaType === 'video' ? (
+            <video
+              className="max-h-[90vh] max-w-[90vw] object-contain"
+              src={openItem.media}
+              autoPlay
+              muted
+              loop
+              playsInline
+              onClick={(e) => e.stopPropagation()}
+            />
+          ) : (
+            <>
+              <img
+                className="block max-h-[90vh] max-w-[90vw] object-contain lg:hidden"
+                src={openItem.mobileMedia}
+                alt={openItem.title}
+                onClick={(e) => e.stopPropagation()}
+              />
+              <img
+                className="hidden max-h-[90vh] max-w-[90vw] object-contain lg:block"
+                src={openItem.media}
+                alt={openItem.title}
+                onClick={(e) => e.stopPropagation()}
+              />
+            </>
+          )}
+        </div>,
+        document.body,
+      )}
     </section>
   );
 }
