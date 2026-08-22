@@ -13,6 +13,13 @@ const SERVICES = ['Brand Strategy', 'Brand Indentity', 'Packaging Design', 'Webs
 const BUDGETS = ['$1,000-$2,500', '$2,500-$5,000', '$5,000-$10,000', '$10,000+', 'Not Sure'];
 const CONNECT_OPTIONS = ['Please call me to discuss my project', 'Email me'];
 const TIME_SLOTS = ['10:30-11:00 AM', '11:00-11:30 AM', '11:30 AM-12:00 PM', '12:00-12:30 PM', 'Not Sure'];
+const PHONE_MAX_LENGTH = 15; // E.164 max
+
+function sanitizePhone(raw: string) {
+  const hasLeadingPlus = raw.trim().startsWith('+');
+  const digits = raw.replace(/\D/g, '');
+  return (hasLeadingPlus ? '+' : '') + digits.slice(0, PHONE_MAX_LENGTH);
+}
 
 function Pill({ value, children }: { value: string; children: ReactNode }) {
   return (
@@ -28,13 +35,21 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
   const [budget, setBudget] = useState('');
   const [connect, setConnect] = useState('');
   const [time, setTime] = useState('');
+  const [phone, setPhone] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
+  const [budgetError, setBudgetError] = useState(false);
   const wantsCall = connect === CONNECT_OPTIONS[0];
   const wantsEmail = connect === CONNECT_OPTIONS[1];
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (!budget) {
+      setBudgetError(true);
+      return;
+    }
+    setBudgetError(false);
     setSubmitting(true);
     setError(false);
 
@@ -91,11 +106,15 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
       </div>
 
       <div className="flex w-full flex-col items-start gap-[8px] pt-[8px]">
-        <Label className="leading-[32px]">Project investment</Label>
+        <Label className="leading-[32px]">Project investment*</Label>
         <ToggleGroup
           type="single"
           value={budget}
-          onValueChange={(value: string) => value && setBudget(value)}
+          onValueChange={(value: string) => {
+            if (!value) return;
+            setBudget(value);
+            setBudgetError(false);
+          }}
           className="flex w-full flex-wrap justify-start gap-[8px]"
         >
           {BUDGETS.map((b) => (
@@ -104,6 +123,7 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
             </Pill>
           ))}
         </ToggleGroup>
+        {budgetError && <p className="text-[12px] text-red-400">Please select a budget.</p>}
       </div>
 
       <div className="flex w-full flex-col items-start gap-[8px] pt-[8px]">
@@ -128,7 +148,20 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
             <Label htmlFor="phone" className="sr-only">
               Phone
             </Label>
-            <Input id="phone" name="phone" type="tel" placeholder="Phone*" required />
+            <Input
+              id="phone"
+              name="phone"
+              type="tel"
+              inputMode="tel"
+              placeholder="Phone*"
+              required
+              value={phone}
+              onChange={(e) => setPhone(sanitizePhone(e.target.value))}
+              minLength={7}
+              maxLength={PHONE_MAX_LENGTH}
+              pattern="\+?[0-9]{7,15}"
+              title="7 to 15 digits, optionally starting with +"
+            />
           </div>
           <div className="flex w-full flex-col items-start gap-[8px] pt-[8px]">
             <Label className="leading-[32px]">Preferred time to reach you · Mon–Fri (CT)</Label>
@@ -165,7 +198,7 @@ export default function BriefForm({ toEmail, onSubmitted }: { toEmail: string; o
       </div>
 
       <Button type="submit" disabled={submitting}>
-        {submitting ? 'Submitting…' : 'Submit Project Brief'}
+        {submitting ? 'Sending…' : 'Send Project Brief'}
       </Button>
 
       <p className="text-[12px] text-brand-muted">A remote-first studio working with brands worldwide.</p>
