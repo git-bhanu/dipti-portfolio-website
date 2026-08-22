@@ -20,15 +20,16 @@ type ClientPageProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: any;
   showHeader?: boolean;
+  showNav?: boolean;
 };
 
-export default function ClientPage({ showHeader = true, ...props }: ClientPageProps) {
+export default function ClientPage({ showHeader = true, showNav = true, ...props }: ClientPageProps) {
   const { data } = useTina(props);
   const page = data.sitePage;
 
   return (
     <main className="min-h-screen bg-brand-black">
-      {showHeader && <Header brand={page.brand} links={page.navigation ?? []} />}
+      {showHeader && <Header brand={page.brand} links={page.navigation ?? []} showNav={showNav} />}
 
       <PageTransition>
       {page.blocks?.map((block: any, i: number) => {

@@ -9,10 +9,11 @@ type HeaderProps = {
   brand: string;
   locationTag?: string;
   links: NavLink[];
+  showNav?: boolean;
 };
 
-export default function Header({ links }: HeaderProps) {
-  const navLinks = links.filter((l) => l.label.toLowerCase() !== 'home');
+export default function Header({ links, showNav = true }: HeaderProps) {
+  const navLinks = showNav ? links.filter((l) => l.label.toLowerCase() !== 'home') : [];
 
   return (
     <header className="flex h-[80px] w-full items-center justify-between overflow-x-hidden px-5 md:px-[8vw]">

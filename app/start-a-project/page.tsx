@@ -43,7 +43,7 @@ export default async function Page() {
       query={result.query}
       data={result.data}
       variables={result.variables}
-      showHeader={false}
+      showNav={false}
     />
   );
 }
